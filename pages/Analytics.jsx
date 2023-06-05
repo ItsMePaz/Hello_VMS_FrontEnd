@@ -5,10 +5,10 @@ function Analytics() {
     <div>
       <h1>Analytics</h1>
       <p>
-        <Link to="/menu">Back</Link>
+        <Link to="/Hello_VMS_FrontEnd/menu">Back</Link>
       </p>
       <div>
-        <Link to="/LogIn">Log-out</Link>
+        <Link to="/Hello_VMS_FrontEnd/">Log-out</Link>
       </div>
     </div>
   );

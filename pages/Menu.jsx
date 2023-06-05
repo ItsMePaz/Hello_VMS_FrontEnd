@@ -5,17 +5,19 @@ function Menu() {
     <>
       <div>Menu</div>
       <div>
-        <Link to="/menu/visitor_database">Visitors DataBase</Link>
+        <Link to="/Hello_VMS_FrontEnd/menu/visitor_database">
+          Visitors DataBase
+        </Link>
       </div>
       <div>
-        <Link to="/menu/monitoring">Monitoring Mode</Link>
+        <Link to="/Hello_VMS_FrontEnd/menu/monitoring">Monitoring Mode</Link>
       </div>
       <div>
-        <Link to="/menu/analytics">Analytics</Link>
+        <Link to="/Hello_VMS_FrontEnd/menu/analytics">Analytics</Link>
       </div>
       <div>
         <p>
-          <Link to="/LogIn">Log-out</Link>
+          <Link to="/Hello_VMS_FrontEnd/">Log-out</Link>
         </p>
       </div>
     </>
