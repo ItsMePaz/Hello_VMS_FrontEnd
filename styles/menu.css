@@ -8,10 +8,10 @@
 .menu-body {
   display: flex;
   flex-direction: column;
-  gap: 4em;
+  gap: 2em;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  margin-top: 2em;
 }
 
 .title {
@@ -42,8 +42,8 @@
   font-family: "Plus Jakarta Sans", sans-serif;
   display: flex;
   border: 1px black solid;
-  width: 338px;
-  height: 280px;
+  width: 288px;
+  height: 230px;
   border-radius: 40px;
   align-items: center;
   justify-content: center;
