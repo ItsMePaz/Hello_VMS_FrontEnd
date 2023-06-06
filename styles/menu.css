@@ -41,13 +41,40 @@
 .analytics {
   font-family: "Plus Jakarta Sans", sans-serif;
   display: flex;
-  border: 1px black solid;
+
   width: 288px;
   height: 230px;
   border-radius: 40px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   text-align: center;
+  font-size: 35px;
+  color: black;
+  transition: transform 0.2s;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.508), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.visitor-database {
+  background-color: #59e0f2;
+}
+
+.visitor-database:hover,
+.monitoring-mode:hover,
+.analytics:hover {
+  transform: scale(1.1);
+}
+
+.monitoring-mode {
+  background-color: #facf36;
+}
+
+.analytics {
+  background-color: #fe54d9;
+}
+
+.links {
+  text-decoration: none;
 }
 
 .menu-options {
@@ -81,4 +108,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.logout-btn:hover {
+  transform: scale(1.1);
 }
