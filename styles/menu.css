@@ -63,6 +63,8 @@
 .monitoring-mode:hover,
 .analytics:hover {
   transform: scale(1.1);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.508),
+    0 6px 6px 0 rgba(0, 0, 0, 0.308);
 }
 
 .monitoring-mode {
