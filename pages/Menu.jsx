@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/menu.css";
+import database from "../images/database.png";
+import analytics from "../images/analytics.png";
+import monitor from "../images/monitor.png";
 
 function Menu() {
   return (
@@ -15,18 +18,17 @@ function Menu() {
         <Link className="links" to="/Hello_VMS_FrontEnd/menu/visitor_database">
           <div className="visitor-database">
             VISITOR <br /> DATABASE <br />
-            <img src="./images/database.png" alt="" />
+            <img src={database} alt="" />
           </div>{" "}
         </Link>
         <Link className="links" to="/Hello_VMS_FrontEnd/menu/monitoring">
           <div className="monitoring-mode">
-            MONITOR <br /> MODE <br /> <img src="./images/monitor.png" alt="" />
+            MONITOR <br /> MODE <br /> <img src={monitor} alt="" />
           </div>
         </Link>
         <Link className="links" to="/Hello_VMS_FrontEnd/menu/analytics">
           <div className="analytics">
-            VISITOR <br /> ANALYTICS <br />{" "}
-            <img src="./images/analytics.png" alt="" />
+            VISITOR <br /> ANALYTICS <br /> <img src={analytics} alt="" />
           </div>
         </Link>
       </section>
