@@ -8,10 +8,11 @@ function Menu() {
   return (
     <div className="menu-body">
       <h1 className="title">VISITOR MANAGEMENT SYSTEM</h1>
-      <div className="logo-placement">
-        <div className="company-logo">
-          COMPANY <br />
-          LOGO
+      <div className="header-color">
+        <div className="logo-placement">
+          <div className="company-logo">
+            <img src="" alt="placeholder" />
+          </div>
         </div>
       </div>
       <section className="menu-options">
