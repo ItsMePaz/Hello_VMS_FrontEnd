@@ -32,12 +32,14 @@ function Menu() {
           </div>
         </Link>
       </section>
-      <p className="greeting">Hello Mx. User! Where to today?</p>
-      <div className="logout-btn-placement">
-        <Link className="links" to="/Hello_VMS_FrontEnd/">
-          <p className="logout-btn">LOG OUT</p>
-        </Link>
-      </div>
+      <section className="menu-options2">
+        <p className="greeting">Hello Mx. User! Where to today?</p>
+        <div className="logout-btn-placement">
+          <Link className="links" to="/Hello_VMS_FrontEnd/">
+            <p className="logout-btn">LOG OUT</p>
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
