@@ -7,6 +7,11 @@ function Monitoring() {
         <Link to="/Hello_VMS_FrontEnd/menu">Back</Link>
       </p>
       <div>
+        <Link to="/Hello_VMS_FrontEnd/monitoring/time-in-visitor">
+          Time-in Visitor
+        </Link>
+      </div>
+      <div>
         <Link to="/Hello_VMS_FrontEnd/">Log-out</Link>
       </div>
     </div>

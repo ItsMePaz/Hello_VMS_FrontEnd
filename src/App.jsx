@@ -5,6 +5,7 @@ import LogIn from "../pages/LogIn";
 import VisitorDataBase from "../pages/VisitorDataBase";
 import Monitoring from "../pages/Monitoring";
 import Analytics from "../pages/Analytics";
+import TimeInVisitor from "../pages/TimeInVisitor";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
       <Route
         path="/Hello_VMS_FrontEnd/menu/monitoring"
         element={<Monitoring />}
+      />
+      <Route
+        path="/Hello_VMS_FrontEnd/monitoring/time-in-visitor"
+        element={<TimeInVisitor />}
       />
       <Route
         path="/Hello_VMS_FrontEnd/menu/analytics"
