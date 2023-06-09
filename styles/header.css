@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Plus+Jakarta+Sans:wght@800&family=Rajdhani:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.header {
+  background-color: #59e0f2;
+  height: 78px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.388), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo {
+  border: 1px solid black;
+  border-radius: 100%;
+  background-color: white;
+  height: 120px;
+  width: 117px;
+}
+
+.logo-placement {
+  position: relative;
+  top: 30px;
+}
+
+/* TITLE */
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 0.2rem;
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+.logout-btn-placement {
+  display: flex;
+  justify-content: center;
+}
+
+.logout-btn {
+  color: white;
+  background-color: black;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  display: flex;
+  border: 1px black solid;
+  width: 114px;
+  height: 56px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.back-logout-btn {
+  color: white;
+  background-color: black;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  display: flex;
+  border: 1px black solid;
+  width: 114px;
+  height: 56px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.back-logout-btn:hover {
+  transform: scale(1.1);
+}
+
+.back-placement {
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+}
+
+.logout-placement {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+}

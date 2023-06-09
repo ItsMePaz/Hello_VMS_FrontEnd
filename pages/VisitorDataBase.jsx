@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
+import PageHeader from "../components/PageHeader";
+import PageTitle from "../components/PageTitle";
+import BackLogoutBtn from "../components/BackLogoutBtn";
 
 function VisitorDataBase() {
   return (
     <div>
-      <h1>Visitor DataBase</h1>
-      <p>
-        <Link to="/Hello_VMS_FrontEnd/menu">Back</Link>
-      </p>
-      <div>
-        <Link to="/Hello_VMS_FrontEnd/">Log-out</Link>
-      </div>
+      <PageHeader />
+      <PageTitle title="VISITOR DATABASE" />
+      <BackLogoutBtn location="/Hello_VMS_FrontEnd/menu" />
     </div>
   );
 }
