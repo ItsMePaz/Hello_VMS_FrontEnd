@@ -6,12 +6,17 @@ import VisitorDataBase from "../pages/VisitorDataBase";
 import Monitoring from "../pages/Monitoring";
 import Analytics from "../pages/Analytics";
 import TimeInVisitor from "../pages/TimeInVisitor";
+import UserManagement from "../pages/UserManagement";
 
 function App() {
   return (
     <Routes>
       <Route path="/Hello_VMS_FrontEnd/" element={<LogIn />} />
       <Route path="/Hello_VMS_FrontEnd/menu" element={<Menu />} />
+      <Route
+        path="/Hello_VMS_FrontEnd/user_management"
+        element={<UserManagement />}
+      />
       <Route
         path="/Hello_VMS_FrontEnd/menu/visitor_database"
         element={<VisitorDataBase />}
