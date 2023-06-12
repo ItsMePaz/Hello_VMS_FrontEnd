@@ -1,11 +1,11 @@
 import "../styles/header.css";
 import Logo from "../images/placeholder.png";
 
-function PageHeader() {
+function PageHeader({ bgColor }) {
   return (
     <div>
-      <div className="header">
-        <div className="logo-placement">
+      <div className={"header" + `${bgColor}`}>
+        <div className={"logo-placement "}>
           {" "}
           <img className="logo" src={Logo} alt="company logo" />
         </div>
