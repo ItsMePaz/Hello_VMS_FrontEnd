@@ -1,0 +1,17 @@
+.cell-border {
+  border: 1px black solid;
+  width: 900px;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.cell-placement {
+  display: flex;
+  justify-content: center;
+}
+
+.back-drop {
+  width: 1000px;
+  position: relative;
+  margin: 0 auto;
+}
