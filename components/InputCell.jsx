@@ -7,7 +7,9 @@ function InputCell({ user_name, user_password, user_id }) {
       <div className="cell-border tw-flex tw-bg-white">
         <div>{user_name}</div>
         <div>{user_password}</div>
-        <button id={user_id}>REMOVE USER</button>
+        <button className="cellButton" id={user_id}>
+          REMOVE USER
+        </button>
       </div>
     </div>
   );

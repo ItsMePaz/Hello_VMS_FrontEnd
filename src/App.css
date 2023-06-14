@@ -1,8 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Plus+Jakarta+Sans:wght@800&family=Rajdhani:wght@700&display=swap");
+
 .cell-border {
   border: 1px black solid;
+  width: 800px;
+  justify-content: space-around;
+  flex-grow: 1;
+  margin-top: 20px;
+  border-radius: 20px;
+  height: 40px;
+  align-items: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.cell-title-border {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: sticky;
+  top: 0;
   width: 900px;
   justify-content: space-around;
   margin-top: 20px;
+  border-radius: 20px;
+  height: 40px;
+  align-items: center;
 }
 
 .cell-placement {
@@ -14,4 +33,21 @@
   width: 1000px;
   position: relative;
   margin: 0 auto;
+  max-height: 300px;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.648), 0 6px 6px 0 rgba(0, 0, 0, 0.575);
+}
+
+.cellButton {
+  color: white;
+  background-color: black;
+
+  border: 1px black solid;
+
+  border-radius: 10px;
+
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: center;
+  width: 120px;
 }
