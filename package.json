@@ -11,9 +11,11 @@
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "dist": "^0.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.0",
     "react-router-dom": "^6.11.2",
     "uglify-js": "^3.17.4"
   },

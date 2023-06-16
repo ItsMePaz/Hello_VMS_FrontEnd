@@ -19,17 +19,18 @@ function Menu() {
         <Link className="links" to="/Hello_VMS_FrontEnd/menu/visitor_database">
           <div className="visitor-database">
             VISITOR <br /> DATABASE <br />
-            <img src={database} alt="" />
+            <img src={database} alt="Database_logo" />
           </div>{" "}
         </Link>
         <Link className="links" to="/Hello_VMS_FrontEnd/menu/monitoring">
           <div className="monitoring-mode">
-            MONITOR <br /> MODE <br /> <img src={monitor} alt="" />
+            MONITOR <br /> MODE <br /> <img src={monitor} alt="Monitor_logo" />
           </div>
         </Link>
         <Link className="links" to="/Hello_VMS_FrontEnd/menu/analytics">
           <div className="analytics">
-            VISITOR <br /> ANALYTICS <br /> <img src={analytics} alt="" />
+            VISITOR <br /> ANALYTICS <br />{" "}
+            <img src={analytics} alt="Analytics_logo" />
           </div>
         </Link>
       </section>

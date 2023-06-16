@@ -9,6 +9,33 @@ import "../styles/userManagementResp.css";
 import RemoveUserModal from "../modals/RemoveUserModal";
 
 function UserManagement() {
+  const admins = [
+    {
+      user_name: "Michael",
+      user_password: "PASSWORD",
+      user_id: "12412412414",
+    },
+    {
+      user_name: "Rodrigo",
+      user_password: "PASSWORD",
+      user_id: "12412412414",
+    },
+    {
+      user_name: "Ryan",
+      user_password: "PASSWORD",
+      user_id: "12412412414",
+    },
+    {
+      user_name: "Bryan",
+      user_password: "PASSWORD",
+      user_id: "12412412414",
+    },
+    {
+      user_name: "Random",
+      user_password: "PASSWORD",
+      user_id: "12412412414",
+    },
+  ];
   return (
     <div>
       <PageHeader bgColor=" tw-bg-white" />
@@ -23,31 +50,13 @@ function UserManagement() {
               <div> </div>
             </div>
           </div>
-          <InputCell
-            user_name="Wilbert"
-            user_password="Wildbert's Password"
-            user_id="12351241"
-          />
-          <InputCell
-            user_name="Ryan"
-            user_password="Ryan's Password"
-            user_id="12351241"
-          />
-          <InputCell
-            user_name="Michael"
-            user_password="Michael's Password"
-            user_id="12351241"
-          />
-          <InputCell
-            user_name="Bryan"
-            user_password="Bryan's Password"
-            user_id="12351241"
-          />
-          <InputCell
-            user_name="Random User"
-            user_password="Random User's Password"
-            user_id="12351241"
-          />
+          {admins.map((admin) => (
+            <InputCell
+              user_name={admin.user_name}
+              user_password={admin.user_password}
+              user_id={admin.user_id}
+            />
+          ))}
         </div>
       </div>
 
