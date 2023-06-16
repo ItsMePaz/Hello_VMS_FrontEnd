@@ -64,7 +64,9 @@ function UserManagement() {
         <div className="back-logout-btn logout-placement">LOG OUT</div>
       </Link>
       {/* back-logout-btn was used as class to define the style for the ADD USER button */}
-      <button className="back-logout-btn back-placement">ADD USER</button>
+      <button className="back-logout-btn back-placement tw-bg-[#57dd57d8] tw-text-black">
+        ADD USER
+      </button>
     </div>
   );
 }

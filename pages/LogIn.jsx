@@ -12,7 +12,7 @@ function LogIn() {
       <div className="login">
         <img src={Logo} alt="" className="tw-mb-[3em]" />
 
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Username:</label>
         <input
           className="input-style"
           type="text"
@@ -23,7 +23,7 @@ function LogIn() {
         <br />
         <label>Password:</label>
         <input
-          className="input-style"
+          className="input-style "
           type="password"
           name="log"
           placeholder="Password"
@@ -35,13 +35,13 @@ function LogIn() {
             to="/Hello_VMS_FrontEnd/menu"
             className="cellButton tw-h-[3em] tw-w-[8.5em]"
           >
-            ADMIN LOGIN
+            USER LOGIN
           </Link>
           <Link
             to="/Hello_VMS_FrontEnd/user_management"
-            className="cellButton tw-w-[13em]"
+            className="cellButton  tw-h-[3em] tw-w-[8.5em]"
           >
-            MANAGEMENT LOGIN
+            ADMIN LOGIN
           </Link>
         </div>
       </div>
