@@ -4,7 +4,7 @@ import database from "../images/database.png";
 import analytics from "../images/analytics.png";
 import monitor from "../images/monitor.png";
 
-function Menu() {
+function Menu({ user }) {
   return (
     <div className="menu-body">
       <h1 className="title">VISITOR MANAGEMENT SYSTEM</h1>
@@ -35,7 +35,7 @@ function Menu() {
         </Link>
       </section>
       <section className="menu-options2">
-        <p className="greeting">Hello Mx. User! Where to today?</p>
+        <p className="greeting">Hello Mx. {user}! Where to today?</p>
         <div className="logout-btn-placement">
           <Link className="links" to="/Hello_VMS_FrontEnd/">
             <p className="logout-btn">LOG OUT</p>

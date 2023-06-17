@@ -5,4 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: "/Hello_VMS_FrontEnd/",
   plugins: [react()],
+  server: {
+    proxy: "http://localhost:3005",
+  },
 });
