@@ -35,6 +35,11 @@ function UserManagement() {
       user_password: "PASSWORD",
       user_id: "12412412414",
     },
+    {
+      user_name: "Tom",
+      user_password: "PASSWORDqetqetqe",
+      user_id: "1adwawd",
+    },
   ];
   return (
     <div>
