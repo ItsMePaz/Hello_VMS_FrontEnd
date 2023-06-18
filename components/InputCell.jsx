@@ -16,7 +16,9 @@ function InputCell({ user_name, user_password, user_id }) {
           <button
             className="cellButton tw-w-[9em]"
             id={user_id}
-            onClick={() => setShow(true)}
+            onClick={() => {
+              setShow(true);
+            }}
           >
             REMOVE USER
           </button>
