@@ -41,6 +41,7 @@ function UserManagement() {
       user_id: "1adwawd",
     },
   ];
+  const [users, setUsers] = useState(admins);
   return (
     <div>
       <PageHeader bgColor=" tw-bg-white" />
@@ -57,6 +58,7 @@ function UserManagement() {
           </div>
           {admins.map((admin) => (
             <InputCell
+              admin={admins}
               user_name={admin.user_name}
               user_password={admin.user_password}
               user_id={admin.user_id}
@@ -69,7 +71,12 @@ function UserManagement() {
         <div className="back-logout-btn logout-placement">LOG OUT</div>
       </Link>
       {/* back-logout-btn was used as class to define the style for the ADD USER button */}
-      <button className="back-logout-btn back-placement tw-bg-[#57dd57d8] tw-text-black">
+      <button
+        className="back-logout-btn back-placement tw-bg-[#57dd57d8] tw-text-black"
+        onClick={() => {
+          console.log(users);
+        }}
+      >
         ADD USER
       </button>
     </div>

@@ -1,10 +1,22 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/menu.css";
 import database from "../images/database.png";
 import analytics from "../images/analytics.png";
 import monitor from "../images/monitor.png";
 
 function Menu({ user }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) navigate("/Hello_VMS_FrontEnd/menu/analytics");
+  }, [user, navigate]);
+
+  const handleLogout = () => {
+    window.localStorage.clear();
+    console.log("You have been loggedout");
+  };
   return (
     <div className="menu-body">
       <h1 className="title">VISITOR MANAGEMENT SYSTEM</h1>
@@ -37,9 +49,14 @@ function Menu({ user }) {
       <section className="menu-options2">
         <p className="greeting">Hello Mx. {user}! Where to today?</p>
         <div className="logout-btn-placement">
-          <Link className="links" to="/Hello_VMS_FrontEnd/">
+          <button
+            className="links"
+            onClick={() => {
+              handleLogout();
+            }} /* to="/Hello_VMS_FrontEnd/" */
+          >
             <p className="logout-btn">LOG OUT</p>
-          </Link>
+          </button>
         </div>
       </section>
     </div>

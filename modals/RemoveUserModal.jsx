@@ -1,6 +1,7 @@
 import React from "react";
 import "../src/app.css";
 import "../styles/userManagementResp.css";
+import { useState } from "react";
 
 function RemoveUserModal({ userName, setShow }) {
   return (
@@ -12,7 +13,12 @@ function RemoveUserModal({ userName, setShow }) {
           <button className="modalButton" onClick={() => setShow(null)}>
             NO
           </button>
-          <button className="modalButton" onClick={() => setShow(null)}>
+          <button
+            className="modalButton"
+            onClick={() => {
+              setShow(null);
+            }}
+          >
             YES
           </button>
         </div>

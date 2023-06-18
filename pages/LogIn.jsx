@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/loginStyle.css";
 import Logo from "../images/placeholder.png";
 import "../src/App.css";
@@ -13,13 +15,28 @@ function LogIn() {
 
   const [user, setUser] = useState(null);
 
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedUser");
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user);
+    }
+  }, []);
+  /* const navigate = useNavigate();
+
+  useEffect (() => {
+    if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
+  },
+    [user, navigate]); */
+
   const handleLogin = (e) => {
     e.preventDefault();
 
     loginService
       .login({ username, password })
       .then((res) => {
-        console.log(res);
+        window.localStorage.setItem("loggedUser", JSON.stringify(res));
+
         setUser(res);
         setUsername("");
         setPassword("");
@@ -64,7 +81,7 @@ function LogIn() {
             <div className="login-btn-placement tw-flex tw-gap-12">
               {/* <button type="submit"> */}
               <button /* There should be a link or navigateTo here */
-                to="/Hello_VMS_FrontEnd/menu"
+                /*  to="/Hello_VMS_FrontEnd/menu" */
                 className="cellButton tw-h-[3em] tw-w-[8.5em]"
               >
                 USER LOGIN
