@@ -15,7 +15,7 @@ function Monitoring() {
 
       <div>
         <Link to="/Hello_VMS_FrontEnd/monitoring/time-in-visitor">
-          <AddVisitorBtn />
+          <AddVisitorBtn purpose="ADD VISITOR" />
         </Link>
       </div>
     </div>

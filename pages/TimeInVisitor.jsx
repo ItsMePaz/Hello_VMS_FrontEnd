@@ -7,6 +7,7 @@ function TimeInVisitor() {
   return (
     <div>
       <PageHeader bgColor=" tw-bg-[#FACF36]" />
+      <br />
       <PageTitle title="TIME IN VISITOR" />
       <BackLogoutBtn />
     </div>

@@ -5,6 +5,7 @@ import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import BackLogoutBtn from "../components/BackLogoutBtn";
 import AddVisitorBtn from "../components/AddVisitorBtn";
+
 function VisitorDataBase() {
   return (
     <div>
@@ -12,8 +13,8 @@ function VisitorDataBase() {
       <br />
       <PageTitle title="VISITOR DATABASE" />
       <div>
-        <Link to="/Hello_VMS_FrontEnd/monitoring/time-in-visitor">
-          {/* <{} /> */}
+        <Link to="/Hello_VMS_FrontEnd/menu/visitor_database/database_results">
+          <AddVisitorBtn purpose="DISPLAY RESULTS" />
         </Link>
       </div>
       <BackLogoutBtn />
