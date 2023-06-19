@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import InputCell from "../components/InputCell";
 import "../styles/header.css";
-import "../src/App.css";
+import "../App.css";
 import "../styles/userManagementResp.css";
 import RemoveUserModal from "../modals/RemoveUserModal";
 

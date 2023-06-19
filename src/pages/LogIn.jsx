@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/loginStyle.css";
 import Logo from "../images/placeholder.png";
-import "../src/App.css";
+import "../App.css";
 import "../styles/menu.css"; /* where I got the title class style */
+
 import loginService from "../services/loginService";
 import Menu from "./Menu";
 

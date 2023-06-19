@@ -1,6 +1,7 @@
-import "../src/app.css";
+import "../app.css";
 import "../styles/userManagementResp.css";
 import { useState } from "react";
+
 import RemoveUserModal from "../modals/RemoveUserModal";
 
 function InputCell({ user_name, user_password, user_id }) {
