@@ -12,17 +12,11 @@ function Monitoring() {
       <PageHeader bgColor=" tw-bg-[#FACF36]" />
       <BackLogoutBtn />
       <PageTitle title="MONITORING" />
-      <AddVisitorBtn />
-      <p>
-        <Link to="/Hello_VMS_FrontEnd/menu">Back</Link>
-      </p>
+
       <div>
         <Link to="/Hello_VMS_FrontEnd/monitoring/time-in-visitor">
-          Time-in Visitor
+          <AddVisitorBtn />
         </Link>
-      </div>
-      <div>
-        <Link to="/Hello_VMS_FrontEnd/">Log-out</Link>
       </div>
     </div>
   );

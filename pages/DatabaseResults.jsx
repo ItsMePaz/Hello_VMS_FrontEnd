@@ -2,15 +2,15 @@ import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import BackLogoutBtn from "../components/BackLogoutBtn";
 
-function Analytics() {
+function DatabaseResults() {
   return (
     <div>
-      <PageHeader bgColor=" tw-bg-[#FE54D9]" />
+      <PageHeader bgColor=" tw-bg-[#59e0f2]" />
       <br />
-      <PageTitle title="ANALYTICS" />
+      <PageTitle title="DATABASE RESULTS" />
       <BackLogoutBtn />
     </div>
   );
 }
 
-export default Analytics;
+export default DatabaseResults;

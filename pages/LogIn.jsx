@@ -22,12 +22,11 @@ function LogIn() {
       setUser(user);
     }
   }, []);
-  /* const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  useEffect (() => {
+  useEffect(() => {
     if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
-  },
-    [user, navigate]); */
+  }, [user, navigate]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -41,7 +40,7 @@ function LogIn() {
         setUsername("");
         setPassword("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error.response.data.error));
   };
 
   const loginForm = () => {
@@ -83,6 +82,9 @@ function LogIn() {
               <button /* There should be a link or navigateTo here */
                 /*  to="/Hello_VMS_FrontEnd/menu" */
                 className="cellButton tw-h-[3em] tw-w-[8.5em]"
+                onClick={() => {
+                  console.log(window.localStorage.getItem.loggedUserJSON);
+                }}
               >
                 USER LOGIN
               </button>
@@ -100,7 +102,8 @@ function LogIn() {
     );
   };
 
-  return <div>{user == null ? loginForm() : <Menu user={user.name} />}</div>;
+  /*   return <div>{user == null ? loginForm() : <Menu user={user.name} />}</div>;
+   */ return <div>{loginForm()}</div>;
 }
 
 export default LogIn;

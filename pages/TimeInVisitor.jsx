@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
+import PageHeader from "../components/PageHeader";
+import PageTitle from "../components/PageTitle";
+import BackLogoutBtn from "../components/BackLogoutBtn";
 
 function TimeInVisitor() {
   return (
     <div>
-      <h1>Time In Visitor</h1>
-      <p>
-        <Link to="/Hello_VMS_FrontEnd/menu/monitoring">Back</Link>
-      </p>
-      <div>
-        <Link to="/Hello_VMS_FrontEnd/">Log-out</Link>
-      </div>
+      <PageHeader bgColor=" tw-bg-[#FACF36]" />
+      <PageTitle title="TIME IN VISITOR" />
+      <BackLogoutBtn />
     </div>
   );
 }
