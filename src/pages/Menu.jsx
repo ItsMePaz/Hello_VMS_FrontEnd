@@ -6,15 +6,12 @@ import database from "../images/database.png";
 import analytics from "../images/analytics.png";
 import monitor from "../images/monitor.png";
 
-function Menu({ user }) {
+function Menu() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user) navigate("/Hello_VMS_FrontEnd/menu/analytics");
-  }, [user, navigate]);
 
   const handleLogout = () => {
     window.localStorage.clear();
+    navigate("/Hello_VMS_FrontEnd/", { replace: true });
     console.log("You have been loggedout");
   };
   return (
@@ -47,7 +44,10 @@ function Menu({ user }) {
         </Link>
       </section>
       <section className="menu-options2">
-        <p className="greeting">Hello Mx. {user}! Where to today?</p>
+        <p className="greeting">
+          Hello Mx. {JSON.parse(window.localStorage.getItem("loggedUser")).name}
+          ! Where to today?
+        </p>
         <div className="logout-btn-placement">
           <button
             className="links"

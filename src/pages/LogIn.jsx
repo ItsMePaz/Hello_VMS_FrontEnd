@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/loginStyle.css";
 import Logo from "../images/placeholder.png";
-import "../src/App.css";
+import "../App.css";
 import "../styles/menu.css"; /* where I got the title class style */
+
 import loginService from "../services/loginService";
 import Menu from "./Menu";
 
@@ -22,12 +23,11 @@ function LogIn() {
       setUser(user);
     }
   }, []);
-  /* const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  useEffect (() => {
+  useEffect(() => {
     if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
-  },
-    [user, navigate]); */
+  }, [user, navigate]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -41,7 +41,7 @@ function LogIn() {
         setUsername("");
         setPassword("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error.response.data.error));
   };
 
   const loginForm = () => {
@@ -83,6 +83,9 @@ function LogIn() {
               <button /* There should be a link or navigateTo here */
                 /*  to="/Hello_VMS_FrontEnd/menu" */
                 className="cellButton tw-h-[3em] tw-w-[8.5em]"
+                onClick={() => {
+                  console.log(window.localStorage.getItem.loggedUserJSON);
+                }}
               >
                 USER LOGIN
               </button>
@@ -100,7 +103,8 @@ function LogIn() {
     );
   };
 
-  return <div>{user == null ? loginForm() : <Menu user={user.name} />}</div>;
+  /*   return <div>{user == null ? loginForm() : <Menu user={user.name} />}</div>;
+   */ return <div>{loginForm()}</div>;
 }
 
 export default LogIn;

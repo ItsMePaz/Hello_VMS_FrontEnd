@@ -1,13 +1,13 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Menu from "../pages/Menu";
-import LogIn from "../pages/LogIn";
-import VisitorDataBase from "../pages/VisitorDataBase";
-import Monitoring from "../pages/Monitoring";
-import Analytics from "../pages/Analytics";
-import TimeInVisitor from "../pages/TimeInVisitor";
-import UserManagement from "../pages/UserManagement";
-
+import Menu from "./pages/Menu";
+import LogIn from "./pages/LogIn";
+import VisitorDataBase from "./pages/VisitorDataBase";
+import Monitoring from "./pages/Monitoring";
+import Analytics from "./pages/Analytics";
+import TimeInVisitor from "./pages/TimeInVisitor";
+import UserManagement from "./pages/UserManagement";
+import DatabaseResults from "./pages/DatabaseResults";
 function App() {
   return (
     <Routes>
@@ -32,6 +32,10 @@ function App() {
       <Route
         path="/Hello_VMS_FrontEnd/menu/analytics"
         element={<Analytics />}
+      />
+      <Route
+        path="/Hello_VMS_FrontEnd/menu/visitor_database/database_results"
+        element={<DatabaseResults />}
       />
     </Routes>
   );

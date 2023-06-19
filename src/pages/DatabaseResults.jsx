@@ -2,14 +2,15 @@ import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import BackLogoutBtn from "../components/BackLogoutBtn";
 
-function VisitorDataBase() {
+function DatabaseResults() {
   return (
     <div>
-      <PageHeader />
-      <PageTitle title="VISITOR DATABASE" />
-      <BackLogoutBtn location="/Hello_VMS_FrontEnd/menu" />
+      <PageHeader bgColor=" tw-bg-[#59e0f2]" />
+      <br />
+      <PageTitle title="DATABASE RESULTS" />
+      <BackLogoutBtn />
     </div>
   );
 }
 
-export default VisitorDataBase;
+export default DatabaseResults;
