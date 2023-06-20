@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/loginStyle.css";
 import Logo from "../images/placeholder.png";
 import "../App.css";
 import "../styles/menu.css"; /* where I got the title class style */
-
+import WaveAnimation from "../components/WaveAnimation";
 import adminLoginService from "../services/adminLoginService";
 import LoadingSpinner from "../components/LoadingSpinner";
 
@@ -28,7 +26,7 @@ function LoginAdmin() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
+    if (user?.token) navigate("/Hello_VMS_FrontEnd/user_management");
   }, [user, navigate]);
 
   /* Admin Login */
@@ -106,7 +104,15 @@ function LoginAdmin() {
     );
   }
   /*   return <div>{user == null ? loginForm() : <Menu user={user.name} />}</div>;
-   */ return <div>{loginForm()}</div>;
+   */ return (
+    <div>
+      {loginForm()}{" "}
+      <button onClick={() => navigate(-1)}>
+        <div className="back-logout-btn back-placement tw-z-[1020]">BACK</div>
+      </button>
+      <WaveAnimation />
+    </div>
+  );
 }
 
 export default LoginAdmin;

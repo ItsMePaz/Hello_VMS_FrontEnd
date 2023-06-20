@@ -7,8 +7,16 @@ import "../styles/header.css";
 import "../App.css";
 import "../styles/userManagementResp.css";
 import RemoveUserModal from "../modals/RemoveUserModal";
+import { useNavigate } from "react-router-dom";
+import WaveAnimation from "../components/WaveAnimation";
 
 function UserManagement() {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    window.localStorage.clear();
+    navigate("/Hello_VMS_FrontEnd/", { replace: true });
+    console.log("You have been loggedout");
+  };
   const admins = [
     {
       user_name: "Michael",
@@ -67,18 +75,25 @@ function UserManagement() {
         </div>
       </div>
 
-      <Link to="/Hello_VMS_FrontEnd/">
-        <div className="back-logout-btn logout-placement">LOG OUT</div>
-      </Link>
+      <button
+        className="back-logout-btn logout-placement tw-z-[1020]"
+        onClick={() => {
+          handleLogout();
+        }}
+      >
+        LOG OUT
+      </button>
+
       {/* back-logout-btn was used as class to define the style for the ADD USER button */}
       <button
-        className="back-logout-btn back-placement tw-bg-[#57dd57d8] tw-text-black"
+        className="back-logout-btn back-placement tw-bg-[#57dd57d8] tw-text-black tw-z-[1020]"
         onClick={() => {
           console.log(users);
         }}
       >
         ADD USER
       </button>
+      <WaveAnimation />
     </div>
   );
 }

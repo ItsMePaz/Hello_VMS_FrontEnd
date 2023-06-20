@@ -13,7 +13,7 @@ function LogoutConfirmationModal({ setShowLogout }) {
   };
 
   return (
-    <div className="background-modal">
+    <div className="background-modal tw-z-[1020]">
       <div className="remove-user-modal ">
         Are you sure you want to Logout?
         <br />

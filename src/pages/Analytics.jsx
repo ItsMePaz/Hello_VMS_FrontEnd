@@ -1,7 +1,7 @@
 import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import BackLogoutBtn from "../components/BackLogoutBtn";
-
+import WaveAnimation from "../components/WaveAnimation";
 function Analytics() {
   return (
     <div>
@@ -9,6 +9,7 @@ function Analytics() {
       <br />
       <PageTitle title="ANALYTICS" />
       <BackLogoutBtn />
+      <WaveAnimation />
     </div>
   );
 }

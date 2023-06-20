@@ -11,6 +11,7 @@ import loginService from "../services/loginService";
 import adminLoginService from "../services/adminLoginService";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Menu from "./Menu";
+import WaveAnimation from "../components/WaveAnimation";
 
 function LogIn() {
   const [loading, setLoading] = useState(false);
@@ -108,7 +109,15 @@ function LogIn() {
     );
   }
   /*   return <div>{user == null ? loginForm() : <Menu user={user.name} />}</div>;
-   */ return <div>{loginForm()}</div>;
+   */ return (
+    <div>
+      {loginForm()}{" "}
+      <button onClick={() => navigate(-1)}>
+        <div className="back-logout-btn back-placement tw-z-[1020]">BACK</div>
+      </button>
+      <WaveAnimation />
+    </div>
+  );
 }
 
 export default LogIn;

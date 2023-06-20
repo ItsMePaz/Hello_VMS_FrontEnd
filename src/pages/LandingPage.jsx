@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import WaveAnimation from "../components/WaveAnimation";
 import "../styles/landingPage.css";
-import database from "../images/database.png";
-import analytics from "../images/analytics.png";
-import wave from "../images/wave.png";
+import admin from "../images/admin.png";
+import groupUsers from "../images/groupUsers.png";
 
 function LandingPage() {
   return (
@@ -18,25 +16,20 @@ function LandingPage() {
         </div>
       </div>
       <section className="menu-options">
-        <Link to="/Hello_VMS_FrontEnd/login_user">
+        <Link className="link" to="/Hello_VMS_FrontEnd/login_user">
           <div className="visitor-database user">
             USER <br />
-            <img src={database} alt="Database_logo" />
+            <img src={groupUsers} alt="Database_logo" />
           </div>{" "}
         </Link>
-        <Link to="/Hello_VMS_FrontEnd/login_admin">
+        <Link className="link" to="/Hello_VMS_FrontEnd/login_admin">
           <div className="visitor-database admin">
             ADMIN <br />
-            <img src={database} alt="Database_logo" />
+            <img src={admin} alt="Database_logo" />
           </div>{" "}
         </Link>
       </section>
-      <section class="wave-section">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-        <div class="wave wave4"></div>
-      </section>
+      <WaveAnimation />
     </div>
   );
 }
