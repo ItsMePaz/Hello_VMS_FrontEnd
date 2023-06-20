@@ -8,10 +8,16 @@ import Analytics from "./pages/Analytics";
 import TimeInVisitor from "./pages/TimeInVisitor";
 import UserManagement from "./pages/UserManagement";
 import DatabaseResults from "./pages/DatabaseResults";
+import LandingPage from "./pages/LandingPage";
+import LoginAdmin from "./pages/LoginAdmin";
 function App() {
   return (
     <Routes>
-      <Route path="/Hello_VMS_FrontEnd/" element={<LogIn />} />
+      <Route path="/Hello_VMS_FrontEnd/" element={<LandingPage />} />
+
+      <Route path="/Hello_VMS_FrontEnd/login_user" element={<LogIn />} />
+      <Route path="/Hello_VMS_FrontEnd/login_admin" element={<LoginAdmin />} />
+
       <Route path="/Hello_VMS_FrontEnd/menu" element={<Menu />} />
       <Route
         path="/Hello_VMS_FrontEnd/user_management"

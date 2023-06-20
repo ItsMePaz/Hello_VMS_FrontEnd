@@ -50,7 +50,9 @@ body {
 
 .login-btn-placement {
   position: relative;
-  top: 3em;
+  top: 1.5em;
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 280px) and (max-width: 708px) {

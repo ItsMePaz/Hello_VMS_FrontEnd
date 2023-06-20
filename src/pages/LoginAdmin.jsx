@@ -7,12 +7,11 @@ import "../styles/loginStyle.css";
 import Logo from "../images/placeholder.png";
 import "../App.css";
 import "../styles/menu.css"; /* where I got the title class style */
-import loginService from "../services/loginService";
+
 import adminLoginService from "../services/adminLoginService";
 import LoadingSpinner from "../components/LoadingSpinner";
-import Menu from "./Menu";
 
-function LogIn() {
+function LoginAdmin() {
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -32,10 +31,11 @@ function LogIn() {
     if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
   }, [user, navigate]);
 
-  const handleLogin = (e) => {
+  /* Admin Login */
+  const handleAdminLogin = (e) => {
     e.preventDefault();
     setLoading(true);
-    loginService
+    adminLoginService
       .login({ username, password })
       .then((res) => {
         window.localStorage.setItem("loggedUser", JSON.stringify(res));
@@ -55,7 +55,7 @@ function LogIn() {
         <br></br>
         <div className="login">
           <img src={Logo} alt="" className="tw-mb-[3em]" />
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleAdminLogin}>
             <div className="tw-flex tw-flex-col tw-items-center">
               {" "}
               <label htmlFor="email">Username:</label>
@@ -82,8 +82,7 @@ function LogIn() {
             </div>
 
             <br />
-            <div className="login-btn-placement tw-flex tw-gap-12">
-              {/* <button type="submit"> */}
+            <div className="login-btn-placement  ">
               <button /* There should be a link or navigateTo here */
                 /*  to="/Hello_VMS_FrontEnd/menu" */
                 className="cellButton tw-h-[3em] tw-w-[8.5em]"
@@ -91,9 +90,8 @@ function LogIn() {
                   console.log(window.localStorage.getItem.loggedUserJSON);
                 }}
               >
-                USER LOGIN
+                ADMIN LOGIN
               </button>
-              {/* </button> */}
             </div>
           </form>
         </div>
@@ -111,4 +109,4 @@ function LogIn() {
    */ return <div>{loginForm()}</div>;
 }
 
-export default LogIn;
+export default LoginAdmin;
