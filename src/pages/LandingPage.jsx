@@ -15,7 +15,7 @@ function LandingPage() {
           </div>
         </div>
       </div>
-      <section className="menu-options">
+      <section className="menu-options tw-z-[1020]">
         <Link className="link" to="/Hello_VMS_FrontEnd/login_user">
           <div className="visitor-database user">
             USER <br />

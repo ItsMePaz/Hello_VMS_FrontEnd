@@ -5,7 +5,7 @@ import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import BackLogoutBtn from "../components/BackLogoutBtn";
 import AddVisitorBtn from "../components/AddVisitorBtn";
-
+import WaveAnimation from "../components/WaveAnimation";
 function VisitorDataBase() {
   return (
     <div>
@@ -18,6 +18,7 @@ function VisitorDataBase() {
         </Link>
       </div>
       <BackLogoutBtn />
+      <WaveAnimation />
     </div>
   );
 }

@@ -5,7 +5,7 @@ import "../styles/menu.css";
 import database from "../images/database.png";
 import analytics from "../images/analytics.png";
 import monitor from "../images/monitor.png";
-
+import WaveAnimation from "../components/WaveAnimation";
 function Menu() {
   const navigate = useNavigate();
 
@@ -36,29 +36,30 @@ function Menu() {
             MONITOR <br /> MODE <br /> <img src={monitor} alt="Monitor_logo" />
           </div>
         </Link>
-        <Link className="links" to="/Hello_VMS_FrontEnd/menu/analytics">
+        <Link className="links " to="/Hello_VMS_FrontEnd/menu/analytics">
           <div className="analytics">
             VISITOR <br /> ANALYTICS <br />{" "}
             <img src={analytics} alt="Analytics_logo" />
           </div>
         </Link>
       </section>
-      <section className="menu-options2">
+      <section className="menu-options2 tw-z-[1020]">
         <p className="greeting">
           Hello Mx. {JSON.parse(window.localStorage.getItem("loggedUser")).name}
           ! Where to today?
         </p>
-        <div className="logout-btn-placement">
+        <div className="logout-btn-placement tw-z-[1020]">
           <button
             className="links"
             onClick={() => {
               handleLogout();
             }} /* to="/Hello_VMS_FrontEnd/" */
           >
-            <p className="logout-btn">LOG OUT</p>
+            <p className="logout-btn ">LOG OUT</p>
           </button>
         </div>
       </section>
+      <WaveAnimation />
     </div>
   );
 }
