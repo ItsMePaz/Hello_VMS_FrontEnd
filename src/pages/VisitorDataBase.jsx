@@ -6,7 +6,7 @@ import PageTitle from "../components/PageTitle";
 import BackLogoutBtn from "../components/BackLogoutBtn";
 import AddVisitorBtn from "../components/AddVisitorBtn";
 import WaveAnimation from "../components/WaveAnimation";
-function VisitorDataBase() {
+function VisitorDataBase({ user, setUser }) {
   return (
     <div>
       <PageHeader bgColor=" tw-bg-[#59e0f2]" />
@@ -17,7 +17,7 @@ function VisitorDataBase() {
           <AddVisitorBtn purpose="DISPLAY RESULTS" />
         </Link>
       </div>
-      <BackLogoutBtn />
+      <BackLogoutBtn user={user} setUser={setUser} />
       <WaveAnimation />
     </div>
   );

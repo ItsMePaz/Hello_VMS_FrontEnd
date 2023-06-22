@@ -1,17 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import "../styles/header.css";
 import LogoutConfirmationModal from "../modals/LogoutConfirmationModal";
 
-function BackLogoutBtn() {
+function BackLogoutBtn({ user, setUser }) {
   const [showLogout, setShowLogout] = useState(false);
   const navigate = useNavigate();
 
-  /* const handleLogout = () => {
+  useEffect(() => {
+    if (!user) navigate("/Hello_VMS_FrontEnd/", { replace: true });
+  }, [user, navigate]);
+
+  const handleLogout = () => {
     window.localStorage.clear();
     navigate("/Hello_VMS_FrontEnd/", { replace: true });
     console.log("You have been loggedout");
-  }; */
+    /* setUser(null); */
+  };
   return (
     <div>
       {showLogout ? (
@@ -24,7 +30,7 @@ function BackLogoutBtn() {
         <button
           className="back-logout-btn logout-placement tw-z-[1019]"
           onClick={() => {
-            /* handleLogout(); */
+            handleLogout();
             setShowLogout(true);
           }} /* to="/Hello_VMS_FrontEnd/" */
         >

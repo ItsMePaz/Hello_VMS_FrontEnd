@@ -13,13 +13,23 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import Menu from "./Menu";
 import WaveAnimation from "../components/WaveAnimation";
 
-function LogIn() {
+function LogIn(
+  {
+    /*   loading,
+  setLoading,
+  username,
+  setUsername,
+  user,
+  setUser,
+  password,
+  setPassword, */
+  }
+) {
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const [user, setUser] = useState(null);
-
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedUser");
     if (loggedUserJSON) {
@@ -31,7 +41,12 @@ function LogIn() {
 
   useEffect(() => {
     if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
+    /*  if (!user) navigate("/Hello_VMS_FrontEnd/"); */
   }, [user, navigate]);
+
+  /*   useEffect(() => {
+    if (!user) navigate("/Hello_VMS_FrontEnd/");
+  }, [user, navigate]); */
 
   const handleLogin = (e) => {
     e.preventDefault();

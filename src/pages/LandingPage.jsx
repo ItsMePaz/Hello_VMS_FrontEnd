@@ -7,7 +7,14 @@ import groupUsers from "../images/groupUsers.png";
 function LandingPage() {
   return (
     <div className="menu-body">
-      <h1 className="title">VISITOR MANAGEMENT SYSTEM</h1>
+      <h1
+        className="title"
+        /*    onClick={() => {
+          console.log(window.localStorage.length);
+        }} */
+      >
+        VISITOR MANAGEMENT SYSTEM
+      </h1>
       <div className="header-color">
         <div className="logo-placement">
           <div className="company-logo">

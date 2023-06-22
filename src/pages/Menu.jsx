@@ -1,19 +1,36 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "../styles/menu.css";
 import database from "../images/database.png";
 import analytics from "../images/analytics.png";
 import monitor from "../images/monitor.png";
 import WaveAnimation from "../components/WaveAnimation";
+
 function Menu() {
+  const [user, setUser] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (window.localStorage.length === 0) navigate("/Hello_VMS_FrontEnd/");
+  }, []);
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedUser");
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user);
+    }
+  }, []);
 
   const handleLogout = () => {
     window.localStorage.clear();
     navigate("/Hello_VMS_FrontEnd/", { replace: true });
     console.log("You have been loggedout");
+    /* setUser(null); */
   };
+
   return (
     <div className="menu-body">
       <h1 className="title">VISITOR MANAGEMENT SYSTEM</h1>
@@ -44,10 +61,7 @@ function Menu() {
         </Link>
       </section>
       <section className="menu-options2 tw-z-[1020]">
-        <p className="greeting">
-          Hello Mx. {JSON.parse(window.localStorage.getItem("loggedUser")).name}
-          ! Where to today?
-        </p>
+        <p className="greeting">Hello Mx. {user.name}! Where to today?</p>
         <div className="logout-btn-placement tw-z-[1020]">
           <button
             className="links"

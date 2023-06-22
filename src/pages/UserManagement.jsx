@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import InputCell from "../components/InputCell";
@@ -11,7 +11,22 @@ import { useNavigate } from "react-router-dom";
 import WaveAnimation from "../components/WaveAnimation";
 
 function UserManagement() {
+  const [user, setUser] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (window.localStorage.length === 0)
+      navigate("/Hello_VMS_FrontEnd/", { replace: true });
+  }, []);
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedUser");
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user);
+    }
+  }, []);
+
   const handleLogout = () => {
     window.localStorage.clear();
     navigate("/Hello_VMS_FrontEnd/", { replace: true });
@@ -49,7 +64,7 @@ function UserManagement() {
       user_id: "1adwawd",
     },
   ];
-  const [users, setUsers] = useState(admins);
+
   return (
     <div>
       <PageHeader bgColor=" tw-bg-white" />
