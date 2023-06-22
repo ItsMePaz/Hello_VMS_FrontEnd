@@ -8,9 +8,9 @@ function BackLogoutBtn({ user, setUser }) {
   const [showLogout, setShowLogout] = useState(false);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (!user) navigate("/Hello_VMS_FrontEnd/", { replace: true });
-  }, [user, navigate]);
+  }, [user, navigate]); */
 
   const handleLogout = () => {
     window.localStorage.clear();

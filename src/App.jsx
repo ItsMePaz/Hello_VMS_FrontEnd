@@ -12,11 +12,11 @@ import DatabaseResults from "./pages/DatabaseResults";
 import LandingPage from "./pages/LandingPage";
 import LoginAdmin from "./pages/LoginAdmin";
 function App() {
-  const [loading, setLoading] = useState(false);
+  /*  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); */
   return (
     <Routes>
       <Route path="/Hello_VMS_FrontEnd/" element={<LandingPage />} />
@@ -46,7 +46,7 @@ function App() {
             setAuthorizedUser={setAuthorizedUser}
           />
         )} */
-        element={<Menu user={user} setUser={setUser} />}
+        element={<Menu /* user={user} setUser={setUser} */ />}
       />
       <Route
         path="/Hello_VMS_FrontEnd/user_management"

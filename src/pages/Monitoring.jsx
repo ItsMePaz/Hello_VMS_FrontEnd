@@ -8,14 +8,16 @@ import AddVisitorBtn from "../components/AddVisitorBtn";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+
 function Monitoring() {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!user) navigate("/Hello_VMS_FrontEnd/", { replace: true });
+  /*  useEffect(() => {
+    if (window.localStorage.length === 0)
+      navigate("/Hello_VMS_FrontEnd/", { replace: true });
   }, [user, navigate]);
-
+ */
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem("loggedUser");
     if (loggedUserJSON) {
