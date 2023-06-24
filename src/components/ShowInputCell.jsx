@@ -15,7 +15,15 @@ function ShowInputCell({ user_name, user_userName, user_password, user_id }) {
           <div>{user_userName}</div>
           <div>{user_name}</div>
 
-          <div>{user_password}</div>
+          <button
+            className="cellButton tw-w-[9em]"
+            id={user_id}
+            onClick={() => {
+              setShow(true);
+            }}
+          >
+            UPDATE USER
+          </button>
           <button
             className="cellButton tw-w-[9em]"
             id={user_id}

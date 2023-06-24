@@ -38,6 +38,7 @@ function AddUserModal({ setShow, userList, setUserList }) {
       })
       .catch((error) => console.log(error));
   };
+
   return (
     <div className="background-modal tw-z-[1500] ">
       <div className="remove-user-modal ">

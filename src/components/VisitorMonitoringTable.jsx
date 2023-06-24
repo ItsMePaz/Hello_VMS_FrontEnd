@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import UnitListVisitor from "./UnitListVisitor";
 import { useEffect } from "react";
 import visitorService from "../services/visitorService";
 
 function VisitorMonitoringTable({ visitorList, setVisitorList }) {
+  const [timeExited, setTimeExited] = useState("");
   useEffect(() => {
     visitorService
       .getVisitors()
@@ -39,13 +40,7 @@ function VisitorMonitoringTable({ visitorList, setVisitorList }) {
               <td>{purposeOfEntry}</td>
               <td>{idReturnNumber}</td>
             </tr> */}
-            <tr>
-              <td>Michael Andrew</td>
-              <td>6 : 20 AM</td>
-              <td>6 : 30 PM</td>
-              <td>Enrollment</td>
-              <td>27</td>
-            </tr>
+
             {visitorList.map((aVisitor) => (
               <UnitListVisitor
                 key={visitorList._id}
@@ -56,6 +51,8 @@ function VisitorMonitoringTable({ visitorList, setVisitorList }) {
                 timeExited={aVisitor.timeExited}
                 purpose={aVisitor.purposeOfEntry}
                 contactNumber={aVisitor.contactNumber}
+                userId={aVisitor.id}
+                setTimeExited={setTimeExited}
               />
             ))}
           </tbody>
