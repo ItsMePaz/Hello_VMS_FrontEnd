@@ -2,7 +2,13 @@ import axios from "axios";
 
 const baseURL = "http://localhost:5656/api/persons";
 
-async function getVisitors() {
+let token = null;
+
+function setToken(newToken) {
+  token = `Bearer ${newToken}`;
+}
+
+function getVisitors() {
   /* return fetch(baseURL)
     .then((res) => res.json())
     .then((data) => data); */
@@ -22,7 +28,7 @@ async function createVisitor(visitor) {
 export default {
   getVisitors,
   createVisitor,
-
+  setToken,
   /* updatePerson,
   deletePerson, */
 };
