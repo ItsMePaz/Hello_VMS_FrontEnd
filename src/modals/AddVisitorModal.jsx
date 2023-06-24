@@ -1,24 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/addUserModal.css";
 import "../styles/loginStyle.css";
 import registerUserService from "../services/registerUserService";
 import visitorService from "../services/visitorService";
+import LoadingSpinner from "../components/LoadingSpinner";
+
 function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [purpose, setPurpose] = useState("");
   const [contactNumber, setContactNumber] = useState("");
-
+  const [userToken, setUserToken] = useState("");
+  const [loading, setLoading] = useState(false);
   const handleAddVisitor = (e) => {
     e.preventDefault();
+    setLoading(true);
+    setUserToken(JSON.parse(window.localStorage.getItem("loggedUser")).token);
 
+    /* console.log(userToken); */
     const visitorObject = {
       firstName: firstName,
       lastName: lastName,
-      purpose: purpose,
+      purposeOfEntry: purpose,
       contactNumber: contactNumber,
+      userToken: userToken,
     };
-
     visitorService
       .createVisitor(visitorObject)
       .then((returnedVisitor) => {
@@ -30,8 +36,17 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
         setPurpose("");
         setContactNumber("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
   };
+
+  if (loading) {
+    return (
+      <div className="tw-flex tw-flex-col tw-h-screen tw-items-center tw-justify-center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
   return (
     <div className="background-modal tw-z-[1500] ">
       <div className="remove-user-modal ">
@@ -94,6 +109,10 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
                 setShow(null);
               }} */
               type="submit"
+              name="submitButton"
+              onClick={() => {
+                console.log(visitorList);
+              }}
             >
               ADD
             </button>

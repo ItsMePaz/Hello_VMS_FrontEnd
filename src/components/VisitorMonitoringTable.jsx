@@ -48,7 +48,7 @@ function VisitorMonitoringTable({ visitorList, setVisitorList }) {
             </tr>
             {visitorList.map((aVisitor) => (
               <UnitListVisitor
-                key={visitorList.id}
+                key={visitorList._id}
                 aVisitor={visitorList}
                 visitorFirstName={aVisitor.firstName}
                 visitorLastName={aVisitor.lastName}

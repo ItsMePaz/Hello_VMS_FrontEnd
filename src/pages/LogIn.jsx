@@ -55,6 +55,7 @@ function LogIn(
       .then((res) => {
         window.localStorage.setItem("loggedUser", JSON.stringify(res));
         visitorService.setToken(res.token);
+        console.log(res.token);
         setUser(res);
         setUsername("");
         setPassword("");
@@ -102,9 +103,9 @@ function LogIn(
               <button /* There should be a link or navigateTo here */
                 /*  to="/Hello_VMS_FrontEnd/menu" */
                 className="cellButton tw-h-[3em] tw-w-[8.5em]"
-                onClick={() => {
+                /*    onClick={() => {
                   console.log(window.localStorage.getItem.loggedUserJSON);
-                }}
+                }} */
               >
                 USER LOGIN
               </button>

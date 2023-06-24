@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import WaveAnimation from "../components/WaveAnimation";
 import userService from "../services/visitorService";
 import AddUserModal from "../modals/AddUserModal";
+import registerUserService from "../services/registerUserService";
 function UserManagement({ userList, setUserList }) {
   const [show, setShow] = useState(false);
   const [user, setUser] = useState("");
@@ -30,7 +31,7 @@ function UserManagement({ userList, setUserList }) {
   }, []);
 
   useEffect(() => {
-    userService
+    registerUserService
       .getUsers()
       .then((res) => {
         setUserList(res);
