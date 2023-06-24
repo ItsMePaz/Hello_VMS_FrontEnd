@@ -15,7 +15,7 @@ function getVisitors() {
   return axios.get(baseURL).then((res) => res.data);
 }
 
-function createVisitor(visitor) {
+async function createVisitor(visitor) {
   const token = `Bearer ${visitor.userToken}`;
   const config = {
     headers: { Authorization: token },

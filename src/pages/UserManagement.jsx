@@ -82,7 +82,13 @@ function UserManagement({ userList, setUserList }) {
 
   return (
     <div>
-      {show ? <AddUserModal setShow={setShow} /> : null}
+      {show ? (
+        <AddUserModal
+          setShow={setShow}
+          userList={userList}
+          setUserList={setUserList}
+        />
+      ) : null}
 
       <PageHeader bgColor=" tw-bg-white" />
       <PageTitle className="tw-mb-[20px]" title="USER MANAGEMENT" />

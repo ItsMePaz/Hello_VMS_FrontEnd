@@ -24,7 +24,7 @@ function VisitorMonitoringTable({ visitorList, setVisitorList }) {
             <td>VISITOR'S NAME</td>
             <td>TIME OF ENTRY</td>
             <td>TIME OF EXIT</td>
-            <td>REASON OF EXIT</td>
+            <td>PURPOSE OF ENTRY</td>
             <td>CONTACT NUMBER</td>
           </tr>
         </thead>

@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import VisitorMonitoringTable from "../components/VisitorMonitoringTable";
+import WaveAnimation from "../components/WaveAnimation";
+
 function Monitoring({ visitorList, setVisitorList }) {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
@@ -44,6 +46,7 @@ function Monitoring({ visitorList, setVisitorList }) {
           setVisitorList={setVisitorList}
         />
       </div>
+      <WaveAnimation />
     </div>
   );
 }

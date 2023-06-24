@@ -54,7 +54,7 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
         <br />
         <form onSubmit={handleAddVisitor}>
           <div className="tw-flex tw-flex-col">
-            <label>FRIST NAME</label>
+            <label>FIRST NAME</label>
             <input
               type="text"
               name="firstname"
@@ -110,9 +110,6 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
               }} */
               type="submit"
               name="submitButton"
-              onClick={() => {
-                console.log(visitorList);
-              }}
             >
               ADD
             </button>

@@ -1,31 +1,34 @@
 import axios from "axios";
 
-const baseUrl = "http://localhost:5656/api/users";
+const baseURL = "http://localhost:5656/api/users";
 
-async function getUsers(user) {
-  return fetch(baseUrl, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(user),
-  })
-    .then((res) => res.json())
-    .then((data) => data);
+let token = null;
+
+function setToken(newToken) {
+  token = `Bearer ${newToken}`;
 }
 
-async function registerUser(credentials) {
-  /*   console.log(credentials.adminToken); */
-  /*  let token = `Bearer ${credentials.adminToken}`;
-  console.log(token); */
+function getUsers() {
+  /* return fetch(baseURL)
+    .then((res) => res.json())
+    .then((data) => data); */
+  return axios.get(baseURL).then((res) => res.data);
+}
 
+async function createUser(user) {
+  const token = `Bearer ${user.adminToken}`;
   const config = {
-    header: { Authorization: `Bearer ${credentials.adminToken}` },
+    headers: { Authorization: token },
   };
 
-  console.log(config);
-
-  return axios.post(baseUrl, credentials, config).then((res) => res.status);
+  console.log(token);
+  return axios.post(baseURL, user, config).then((res) => res.data);
 }
 
-export default { registerUser, getUsers };
+export default {
+  getUsers,
+  createUser,
+  setToken,
+  /* updatePerson,
+  deletePerson, */
+};

@@ -2,47 +2,39 @@ import React, { useState } from "react";
 import "../styles/addUserModal.css";
 import "../styles/loginStyle.css";
 import registerUserService from "../services/registerUserService";
-function AddUserModal({ setShow }) {
+function AddUserModal({ setShow, userList, setUserList }) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [adminToken, setAdminToken] = useState("");
-  /*  const [systemUser, setSystemUser] = useState("");
-  const [newSystemUser, setNewSystemUser] = useState("");
-  const [systemUserName, setSystemUserName] = useState("");
-  const [newSystemUserName, setNewSystemUserName] = useState("");
-  const [systemUserPassword, setSystemUserPassword] = useState("");
-  const [newSystemUserPassword, setNewSystemUserPassword] = useState("");
-
-  const addUser = (e) => {
-    e.preventDefault();
-
-    const userObject = {
-      username: setSystemUserName,
-      name: setSystemUser,
-      password: setSystemUserPassword,
-    };
-    userService
-      .createUsers(userObject)
-      .then((returnedUser, returnedUserName, returnedUserPassword) => {
-        setSystemUser(systemUser.concat(returnedUser));
-        setSystemUserName(systemUserName.concat(returnedUserName));
-        setSystemUserPassword(systemUserPassword.concat(returnedUserPassword));
-      })
-      .catch((error) => console.log(error));
-  }; */
-
+  const [role, setRole] = useState("");
   const handleAddUser = (e) => {
     e.preventDefault();
     /*     console.log(JSON.parse(window.localStorage.getItem("loggedUser")).token);
      */ setAdminToken(
       JSON.parse(window.localStorage.getItem("loggedUser")).token
     );
+
+    setRole("user");
+
+    const userObject = {
+      name: name,
+      username: username,
+      password: password,
+      role: role,
+      adminToken: adminToken,
+    };
+
     registerUserService
-      .registerUser({ name, username, password, adminToken })
-      .then((_res) => {
+      .createUser(userObject)
+      .then((returnedUser) => {
+        console.log(returnedUser);
         setShow(null);
+        /*         console.log(userObject.adminToken);
+         */ setUserList(userList.concat(returnedUser));
         setName("");
+        setUsername("");
+        setPassword("");
       })
       .catch((error) => console.log(error));
   };
@@ -95,6 +87,9 @@ function AddUserModal({ setShow }) {
             <button
               className="modalButton tw-bg-black"
               /*  onClick={() => {
+                setShow(null);
+              }} */
+              /* onClick={() => {
                 setShow(null);
               }} */
               type="submit"
