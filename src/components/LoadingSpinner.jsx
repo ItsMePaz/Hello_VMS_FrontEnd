@@ -1,8 +1,8 @@
 function LoadingSpinner() {
   return (
     /*  */
-    <div className="background-modal">
-      <div className="remove-user-modal ">
+    <div className="logout-background-modal">
+      <div className="logout-remove-user-modal ">
         <div
           role="status"
           className="tw-flex tw-items-center tw-justify-center"

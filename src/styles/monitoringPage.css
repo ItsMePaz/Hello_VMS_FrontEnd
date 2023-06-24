@@ -1,0 +1,34 @@
+.table-headings-placement {
+  max-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.table-body-placement {
+  max-height: 350px;
+  display: flex;
+  justify-content: center;
+  /*   padding-left: 1.2%; */
+  /*   border: 1px solid black; */
+}
+
+.table-headings-placement td {
+  /*ok*/
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  min-width: 250px;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.table-body-placement td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  min-width: 250px;
+  max-width: 250px;
+}

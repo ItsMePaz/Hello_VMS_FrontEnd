@@ -8,6 +8,8 @@ import "../styles/menu.css"; /* where I got the title class style */
 import WaveAnimation from "../components/WaveAnimation";
 import adminLoginService from "../services/adminLoginService";
 import LoadingSpinner from "../components/LoadingSpinner";
+import userService from "../services/visitorService";
+import registerUserService from "../services/registerUserService";
 
 function LoginAdmin() {
   const [loading, setLoading] = useState(false);
@@ -37,7 +39,9 @@ function LoginAdmin() {
       .login({ username, password })
       .then((res) => {
         window.localStorage.setItem("loggedUser", JSON.stringify(res));
+        /* registerUserService.setToken(res.token); */
 
+        console.log(res.token);
         setUser(res);
         setUsername("");
         setPassword("");
@@ -84,9 +88,9 @@ function LoginAdmin() {
               <button /* There should be a link or navigateTo here */
                 /*  to="/Hello_VMS_FrontEnd/menu" */
                 className="cellButton tw-h-[3em] tw-w-[8.5em]"
-                onClick={() => {
+                /*  onClick={() => {
                   console.log(window.localStorage.getItem.loggedUserJSON);
-                }}
+                }} */
               >
                 ADMIN LOGIN
               </button>

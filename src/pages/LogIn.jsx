@@ -12,7 +12,7 @@ import adminLoginService from "../services/adminLoginService";
 import LoadingSpinner from "../components/LoadingSpinner";
 import Menu from "./Menu";
 import WaveAnimation from "../components/WaveAnimation";
-
+import visitorService from "../services/visitorService";
 function LogIn(
   {
     /*   loading,
@@ -41,7 +41,6 @@ function LogIn(
 
   useEffect(() => {
     if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
-    /*  if (!user) navigate("/Hello_VMS_FrontEnd/"); */
   }, [user, navigate]);
 
   /*   useEffect(() => {
@@ -55,7 +54,7 @@ function LogIn(
       .login({ username, password })
       .then((res) => {
         window.localStorage.setItem("loggedUser", JSON.stringify(res));
-
+        visitorService.setToken(res.token);
         setUser(res);
         setUsername("");
         setPassword("");

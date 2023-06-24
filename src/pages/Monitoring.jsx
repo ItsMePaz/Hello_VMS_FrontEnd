@@ -8,8 +8,8 @@ import AddVisitorBtn from "../components/AddVisitorBtn";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-
-function Monitoring() {
+import VisitorMonitoringTable from "../components/VisitorMonitoringTable";
+function Monitoring({ visitorList, setVisitorList }) {
   const [user, setUser] = useState("");
   const navigate = useNavigate();
 
@@ -32,10 +32,17 @@ function Monitoring() {
       <BackLogoutBtn user={user} setUser={setUser} />
       <PageTitle title="MONITORING" />
 
+      <VisitorMonitoringTable
+        visitorList={visitorList}
+        setVisitorList={setVisitorList}
+      />
+
       <div>
-        <Link to="/Hello_VMS_FrontEnd/monitoring/time-in-visitor">
-          <AddVisitorBtn purpose="ADD VISITOR" />
-        </Link>
+        <AddVisitorBtn
+          purpose="ADD VISITOR"
+          visitorList={visitorList}
+          setVisitorList={setVisitorList}
+        />
       </div>
     </div>
   );

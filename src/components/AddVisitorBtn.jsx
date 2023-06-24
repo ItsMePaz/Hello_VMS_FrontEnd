@@ -1,11 +1,23 @@
 import React from "react";
 import "../styles/header.css";
+import AddVisitorModal from "../modals/AddVisitorModal";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function AddVisitorBtn({ purpose }) {
+  const [show, setShow] = useState(false);
+
   return (
-    <button className="add-btn add-placement tw-w-[8em] tw-bg-[#59E0F2] tw-z-[1020]">
-      {purpose}
-    </button>
+    <div>
+      {show ? <AddVisitorModal setShow={setShow} /> : null}
+
+      <button
+        className="add-btn add-placement tw-w-[8em] tw-bg-[#59E0F2] tw-z-[1020]"
+        onClick={() => setShow(true)}
+      >
+        {purpose}
+      </button>
+    </div>
   );
 }
 

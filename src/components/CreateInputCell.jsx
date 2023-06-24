@@ -4,15 +4,17 @@ import { useState } from "react";
 
 import RemoveUserModal from "../modals/RemoveUserModal";
 
-function InputCell({ user_name, user_password, user_id }) {
+function CreatInputCell({ user_name, user_userName, user_password, user_id }) {
   const [show, setShow] = useState(false);
 
   return (
     <div>
       {show ? <RemoveUserModal userName={user_name} setShow={setShow} /> : null}
       <div className="cell-placement">
-        <div className="cell-border tw-bg-white">
+        <div className="cell-border tw-bg-[#FACF36]">
+          <div>{user_userName}</div>
           <div>{user_name}</div>
+
           <div>{user_password}</div>
           <button
             className="cellButton tw-w-[9em]"
@@ -29,4 +31,4 @@ function InputCell({ user_name, user_password, user_id }) {
   );
 }
 
-export default InputCell;
+export default CreatInputCell;

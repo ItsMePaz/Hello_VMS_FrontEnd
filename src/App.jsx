@@ -11,7 +11,11 @@ import UserManagement from "./pages/UserManagement";
 import DatabaseResults from "./pages/DatabaseResults";
 import LandingPage from "./pages/LandingPage";
 import LoginAdmin from "./pages/LoginAdmin";
+
 function App() {
+  const [userList, setUserList] = useState([]);
+  const [visitorList, setVisitorList] = useState([]);
+
   /*  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -46,11 +50,17 @@ function App() {
             setAuthorizedUser={setAuthorizedUser}
           />
         )} */
-        element={<Menu /* user={user} setUser={setUser} */ />}
+        element={
+          <Menu
+          /* user={user} setUser={setUser} */
+          />
+        }
       />
       <Route
         path="/Hello_VMS_FrontEnd/user_management"
-        element={<UserManagement />}
+        element={
+          <UserManagement userList={userList} setUserList={setUserList} />
+        }
       />
       <Route
         path="/Hello_VMS_FrontEnd/menu/visitor_database"
@@ -58,7 +68,12 @@ function App() {
       />
       <Route
         path="/Hello_VMS_FrontEnd/menu/monitoring"
-        element={<Monitoring /* user={user} setUser={setUser} */ />}
+        element={
+          <Monitoring
+            visitorList={visitorList}
+            setVisitorList={setVisitorList} /* user={user} setUser={setUser} */
+          />
+        }
       />
       <Route
         path="/Hello_VMS_FrontEnd/monitoring/time-in-visitor"

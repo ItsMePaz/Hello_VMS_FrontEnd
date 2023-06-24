@@ -2,15 +2,17 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
-import InputCell from "../components/InputCell";
+import ShowInputCell from "../components/ShowInputCell";
 import "../styles/header.css";
 import "../App.css";
 import "../styles/userManagementResp.css";
 import RemoveUserModal from "../modals/RemoveUserModal";
 import { useNavigate } from "react-router-dom";
 import WaveAnimation from "../components/WaveAnimation";
-
-function UserManagement() {
+import userService from "../services/visitorService";
+import AddUserModal from "../modals/AddUserModal";
+function UserManagement({ userList, setUserList }) {
+  const [show, setShow] = useState(false);
   const [user, setUser] = useState("");
   const navigate = useNavigate();
 
@@ -27,12 +29,24 @@ function UserManagement() {
     }
   }, []);
 
+  useEffect(() => {
+    userService
+      .getUsers()
+      .then((res) => {
+        setUserList(res);
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   const handleLogout = () => {
     window.localStorage.clear();
     navigate("/Hello_VMS_FrontEnd/", { replace: true });
     console.log("You have been loggedout");
   };
-  const admins = [
+  /*  const userList = [
     {
       user_name: "Michael",
       user_password: "PASSWORD",
@@ -63,10 +77,12 @@ function UserManagement() {
       user_password: "PASSWORDqetqetqe",
       user_id: "1adwawd",
     },
-  ];
+  ]; */
 
   return (
     <div>
+      {show ? <AddUserModal setShow={setShow} /> : null}
+
       <PageHeader bgColor=" tw-bg-white" />
       <PageTitle className="tw-mb-[20px]" title="USER MANAGEMENT" />
       <br />
@@ -74,17 +90,17 @@ function UserManagement() {
         <div className=" tw-bg-[#59e0f2] tw-pb-[20px] ">
           <div className="cell-placement">
             <div className="cell-title-border">
-              <div>NAME</div>
-              <div>PASSWORD</div>
-              <div> </div>
+              <div>SYSTEM USERS LIST</div>
             </div>
           </div>
-          {admins.map((admin) => (
-            <InputCell
-              admin={admins}
-              user_name={admin.user_name}
-              user_password={admin.user_password}
-              user_id={admin.user_id}
+          {userList.map((aUser) => (
+            <ShowInputCell
+              key={userList.id}
+              aUser={userList}
+              user_name={aUser.name}
+              user_userName={aUser.username}
+              user_password={aUser.password}
+              user_id={aUser.id}
             />
           ))}
         </div>
@@ -103,7 +119,7 @@ function UserManagement() {
       <button
         className="back-logout-btn back-placement tw-bg-[#57dd57d8] tw-text-black tw-z-[1020]"
         onClick={() => {
-          console.log(users);
+          setShow(true);
         }}
       >
         ADD USER
