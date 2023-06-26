@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import "../styles/addUserModal.css";
 import "../styles/loginStyle.css";
 import registerUserService from "../services/registerUserService";
+import LoadingSpinner from "../components/LoadingSpinner";
+
 function AddUserModal({ setShow, userList, setUserList }) {
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,6 +13,7 @@ function AddUserModal({ setShow, userList, setUserList }) {
   const [role, setRole] = useState("");
   const handleAddUser = (e) => {
     e.preventDefault();
+    setLoading(true);
     /*     console.log(JSON.parse(window.localStorage.getItem("loggedUser")).token);
      */ setAdminToken(
       JSON.parse(window.localStorage.getItem("loggedUser")).token
@@ -36,9 +40,21 @@ function AddUserModal({ setShow, userList, setUserList }) {
         setUsername("");
         setPassword("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        alert(
+          `Are you sure you want to add ${name} with a username: ${username}, and password: ${password} as a System user? Click "ADD" again to confirm and "CANCEL" to cancel`
+        );
+      })
+      .finally(() => setLoading(false));
   };
-
+  if (loading) {
+    return (
+      <div className="tw-flex tw-flex-col tw-h-screen tw-items-center tw-justify-center">
+        <LoadingSpinner loadingMessage="Confirming and Adding New User to the Database. Please Wait" />
+      </div>
+    );
+  }
   return (
     <div className="background-modal tw-z-[1500] ">
       <div className="remove-user-modal ">
@@ -48,6 +64,7 @@ function AddUserModal({ setShow, userList, setUserList }) {
           <div className="tw-flex tw-flex-col">
             <label>USERNAME</label>
             <input
+              required
               type="text"
               name="username"
               value={username}
@@ -58,6 +75,7 @@ function AddUserModal({ setShow, userList, setUserList }) {
           <div className="tw-flex tw-flex-col">
             <label>FULL NAME </label>
             <input
+              required
               type="text"
               name="name"
               value={name}
@@ -68,6 +86,7 @@ function AddUserModal({ setShow, userList, setUserList }) {
           <div className="tw-flex tw-flex-col">
             <label>PASSWORD </label>
             <input
+              required
               type="password"
               name="password"
               value={password}

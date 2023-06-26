@@ -1,4 +1,6 @@
-function LoadingSpinner() {
+import React from "react";
+
+function LoadingSpinner({ loadingMessage }) {
   return (
     /*  */
     <div className="logout-background-modal">
@@ -23,7 +25,9 @@ function LoadingSpinner() {
               fill="currentFill"
             />
           </svg>
-          <span className="sr-only">Logging In...</span>
+          <span className="sr-only tw-text-center tw-w-[200px]">
+            {loadingMessage}
+          </span>
         </div>
       </div>{" "}
     </div>

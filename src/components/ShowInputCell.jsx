@@ -3,13 +3,43 @@ import "../styles/userManagementResp.css";
 import { useState } from "react";
 
 import RemoveUserModal from "../modals/RemoveUserModal";
-
-function ShowInputCell({ user_name, user_userName, user_password, user_id }) {
+import UpdateUserModal from "../modals/UpdateUserModal";
+function ShowInputCell({
+  update_id,
+  user_name,
+  user_userName,
+  user_password,
+  user_id,
+  userList,
+  setUserList,
+  adminKey,
+}) {
   const [show, setShow] = useState(false);
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
 
   return (
     <div>
-      {show ? <RemoveUserModal userName={user_name} setShow={setShow} /> : null}
+      {show ? (
+        <RemoveUserModal
+          userName={user_name}
+          setShow={setShow}
+          user_id={user_id}
+          userList={userList}
+          setUserList={setUserList}
+        />
+      ) : null}
+
+      {showUpdateModal ? (
+        <UpdateUserModal
+          name={user_name}
+          username={user_userName}
+          password={user_password}
+          setShowUpdateModal={setShowUpdateModal}
+          update_id={update_id}
+          userList={userList}
+          setUserList={setUserList}
+        />
+      ) : null}
       <div className="cell-placement">
         <div className="cell-border tw-bg-white">
           <div>{user_userName}</div>
@@ -19,7 +49,7 @@ function ShowInputCell({ user_name, user_userName, user_password, user_id }) {
             className="cellButton tw-w-[9em]"
             id={user_id}
             onClick={() => {
-              setShow(true);
+              setShowUpdateModal(true);
             }}
           >
             UPDATE USER

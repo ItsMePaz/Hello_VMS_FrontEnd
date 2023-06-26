@@ -5,19 +5,18 @@ import "../styles/header.css";
 import LogoutConfirmationModal from "../modals/LogoutConfirmationModal";
 
 function BackLogoutBtn({ user, setUser }) {
-  const [showLogout, setShowLogout] = useState(false);
+  const [showLogout, setShowLogout] = useState(null);
   const navigate = useNavigate();
 
   /*   useEffect(() => {
     if (!user) navigate("/Hello_VMS_FrontEnd/", { replace: true });
   }, [user, navigate]); */
 
-  const handleLogout = () => {
+  /*  const handleLogout = () => {
     window.localStorage.clear();
     navigate("/Hello_VMS_FrontEnd/", { replace: true });
     console.log("You have been loggedout");
-    /* setUser(null); */
-  };
+  }; */
   return (
     <div>
       {showLogout ? (
@@ -30,7 +29,7 @@ function BackLogoutBtn({ user, setUser }) {
         <button
           className="back-logout-btn logout-placement tw-z-[1019]"
           onClick={() => {
-            handleLogout();
+            /* handleLogout(); */
             setShowLogout(true);
           }} /* to="/Hello_VMS_FrontEnd/" */
         >

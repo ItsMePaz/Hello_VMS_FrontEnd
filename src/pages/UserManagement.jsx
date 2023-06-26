@@ -36,6 +36,7 @@ function UserManagement({ userList, setUserList }) {
       .then((res) => {
         setUserList(res);
         console.log(res);
+        /*  if(res[0].role === "user")  */
       })
       .catch((error) => {
         console.log(error);
@@ -47,38 +48,6 @@ function UserManagement({ userList, setUserList }) {
     navigate("/Hello_VMS_FrontEnd/", { replace: true });
     console.log("You have been loggedout");
   };
-  /*  const userList = [
-    {
-      user_name: "Michael",
-      user_password: "PASSWORD",
-      user_id: "12412412414",
-    },
-    {
-      user_name: "Rodrigo",
-      user_password: "PASSWORD",
-      user_id: "12412412414",
-    },
-    {
-      user_name: "Ryan",
-      user_password: "PASSWORD",
-      user_id: "12412412414",
-    },
-    {
-      user_name: "Bryan",
-      user_password: "PASSWORD",
-      user_id: "12412412414",
-    },
-    {
-      user_name: "Random",
-      user_password: "PASSWORD",
-      user_id: "12412412414",
-    },
-    {
-      user_name: "Tom",
-      user_password: "PASSWORDqetqetqe",
-      user_id: "1adwawd",
-    },
-  ]; */
 
   return (
     <div>
@@ -102,12 +71,15 @@ function UserManagement({ userList, setUserList }) {
           </div>
           {userList.map((aUser) => (
             <ShowInputCell
-              key={userList.id}
+              key={aUser.id}
               aUser={userList}
               user_name={aUser.name}
               user_userName={aUser.username}
               user_password={aUser.password}
-              user_id={aUser.id}
+              /* user_id={aUser.id} */
+              update_id={aUser.id_2}
+              userList={userList}
+              setUserList={setUserList}
             />
           ))}
         </div>

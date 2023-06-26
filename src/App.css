@@ -87,5 +87,7 @@
 
 .modal-button-placement {
   display: flex;
-  gap: 3em;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 20px;
 }

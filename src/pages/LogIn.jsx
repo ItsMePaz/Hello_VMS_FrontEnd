@@ -55,7 +55,7 @@ function LogIn(
       .then((res) => {
         window.localStorage.setItem("loggedUser", JSON.stringify(res));
         visitorService.setToken(res.token);
-        console.log(res.token);
+        console.log(res);
         setUser(res);
         setUsername("");
         setPassword("");
@@ -76,6 +76,7 @@ function LogIn(
               {" "}
               <label htmlFor="email">Username:</label>
               <input
+                required
                 className="input-style"
                 type="text"
                 name="Username"
@@ -87,6 +88,7 @@ function LogIn(
               <br />
               <label>Password:</label>
               <input
+                required
                 className="input-style "
                 type="password"
                 name="log"
@@ -119,7 +121,7 @@ function LogIn(
   if (loading) {
     return (
       <div className="tw-flex tw-flex-col tw-h-screen tw-items-center tw-justify-center">
-        <LoadingSpinner />
+        <LoadingSpinner loadingMessage={`Logging in as ${username}`} />
       </div>
     );
   }
