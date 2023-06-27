@@ -78,6 +78,7 @@ function UserManagement({ userList, setUserList }) {
               user_password={aUser.password}
               /* user_id={aUser.id} */
               update_id={aUser.id_2}
+              user_id={aUser.id}
               userList={userList}
               setUserList={setUserList}
             />

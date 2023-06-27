@@ -20,19 +20,19 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
       });
   }, []);
 
-  const firstNameGroups = {
-    firstName: visitorList.filter((obj) => obj.firstName === firstName),
+  const lastNameGroups = {
+    lastName: visitorList.filter((obj) => obj.lastName === lastName),
   };
 
-  const firstNameObject = firstNameGroups.firstName;
-  console.log(firstNameObject);
+  const lastNameObject = lastNameGroups.lastName;
+  console.log(lastNameObject);
 
   return (
     <div className="background-modal-results tw-z-[1020]">
       <div className="remove-user-modal-results ">
         <div className="tw-flex tw-justify-center">
-          Showing Results with first name{" "}
-          <strong style={{ marginLeft: ".5rem" }}>{firstName}</strong>
+          Showing Results with last name{" "}
+          <strong style={{ marginLeft: ".5rem" }}>{lastName}</strong>
         </div>
         <br />
         <table className="table-headings-placement">
@@ -51,17 +51,17 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
         <div className="table-body-placement tw-overflow-auto">
           <table>
             <tbody>
-              {firstNameObject.map((aFirstName) => (
+              {lastNameObject.map((aLastName) => (
                 <UnitListResult
-                  key={firstNameObject._id}
-                  aFirstName={firstNameObject}
-                  firstName={aFirstName.firstName}
-                  lastName={aFirstName.lastName}
-                  timeVisited={aFirstName.timeVisited}
-                  timeExited={aFirstName.timeExited}
-                  purpose={aFirstName.purposeOfEntry}
-                  contactNumber={aFirstName.contactNumber}
-                  userId={aFirstName.id}
+                  key={lastNameObject._id}
+                  aLastName={lastNameObject}
+                  lastName={aLastName.lastName}
+                  firstName={aLastName.firstName}
+                  timeVisited={aLastName.timeVisited}
+                  timeExited={aLastName.timeExited}
+                  purpose={aLastName.purposeOfEntry}
+                  contactNumber={aLastName.contactNumber}
+                  userId={aLastName.id}
                 />
               ))}
             </tbody>

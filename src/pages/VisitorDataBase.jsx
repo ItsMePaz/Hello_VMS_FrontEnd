@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/menu.css";
 import "../styles/monitoringPage.css";
+
 import PageHeader from "../components/PageHeader";
 import PageTitle from "../components/PageTitle";
 import BackLogoutBtn from "../components/BackLogoutBtn";
@@ -10,16 +11,22 @@ import ResultsByNameCell from "../components/ResultsByNameCell";
 import ResultsByDateCell from "../components/ResultsByDateCell";
 import ResultsByContactNumberCell from "../components/ResultsByContactNumberCell";
 import ResultsByPurposeCell from "../components/ResultsByPurposeCell";
+import ResultsByLastNameCell from "../components/ResultsByLastNameCell";
+
 function VisitorDataBase({ user, setUser }) {
   return (
     <div>
       <PageHeader bgColor=" tw-bg-[#59e0f2]" />
       <br />
       <PageTitle title="VISITOR DATABASE" />
-      <ResultsByNameCell />
-      <ResultsByDateCell />
-      <ResultsByContactNumberCell />
-      <ResultsByPurposeCell />
+      <div className="tw-z-[2000] tw-overflow-auto tw-h-[50vh]">
+        <ResultsByNameCell />
+        <ResultsByLastNameCell />
+        <ResultsByDateCell />
+        <ResultsByContactNumberCell />
+        <ResultsByPurposeCell />
+      </div>
+
       <BackLogoutBtn user={user} setUser={setUser} />
       <WaveAnimation />
     </div>

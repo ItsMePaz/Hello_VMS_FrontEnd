@@ -103,7 +103,7 @@ function LoginAdmin() {
   if (loading) {
     return (
       <div className="tw-flex tw-flex-col tw-h-screen tw-items-center tw-justify-center">
-        <LoadingSpinner />
+        <LoadingSpinner loadingMessage="Logging in as Admin..." />
       </div>
     );
   }

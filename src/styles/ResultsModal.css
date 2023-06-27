@@ -11,6 +11,7 @@
   border-radius: 5px;
   flex-direction: column;
   transform: translate(0%, 0%);
+  font-size: 15px;
 }
 
 .background-modal-results {
@@ -36,6 +37,47 @@
   justify-content: center;
   gap: 1em;
 }
+
+.table-headings-placement {
+  max-height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.table-body-placement {
+  max-height: 350px;
+  display: flex;
+  justify-content: center;
+  /*   padding-left: 1.2%; */
+  /*   border: 1px solid black; */
+}
+
+.table-headings-placement td {
+  /*ok*/
+  position: relative;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  max-width: 12em;
+  min-width: 12em;
+  word-wrap: break-word;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.table-body-placement td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+  max-width: 12em;
+  min-width: 12em;
+  position: relative;
+  word-wrap: break-word;
+}
+
 @media screen and (min-width: 280px) and (max-width: 708px) {
   .cell-border {
     max-width: 200px;

@@ -16,8 +16,8 @@ function ResultsByPurposeCell({
   return (
     <div>
       {show ? <RemoveUserModal userName={user_name} setShow={setShow} /> : null}
-      <div className="cell-placement">
-        <div className="cell-border tw-bg-[#FACF36]  md:tw-h-[5em]  lg:tw-max-w-[45em] xl:tw-max-w-[70em] xl:tw-flex xl:tw-flex-row">
+      <div className="cell-placement ">
+        <div className="cell-border tw-bg-[#FACF36]  tw-z-[3000] md:tw-h-[5em]  lg:tw-max-w-[45em] xl:tw-max-w-[70em] xl:tw-flex xl:tw-flex-row tw-text-center">
           <div>
             <strong>RESULTS BY PURPOSE OF VISIT</strong>
           </div>

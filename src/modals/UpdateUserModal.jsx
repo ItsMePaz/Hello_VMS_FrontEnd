@@ -22,6 +22,7 @@ function UpdateUserModal({
 
   const handleUpdateName = (e) => {
     e.preventDefault();
+    setLoading(true);
     setAdminToken(JSON.parse(window.localStorage.getItem("loggedUser")).token);
     const nameObject = {
       name: newName,
@@ -40,12 +41,14 @@ function UpdateUserModal({
         alert(
           `Are you sure to vhange this User's name from "${name}" to "${newName}"? If so, please click "UPDATE NAME" again`
         );
-      });
+      })
+      .finally(() => setLoading(false));
     console.log(newName);
   };
 
   const handleUpdateUsername = (e) => {
     e.preventDefault();
+    setLoading(true);
     setAdminToken(JSON.parse(window.localStorage.getItem("loggedUser")).token);
     const userNameObject = {
       username: newUsername,
@@ -64,12 +67,14 @@ function UpdateUserModal({
         alert(
           `Are you sure to change this User's username from "${username}" to "${newUsername}"? If so, please click "UPDATE USERNAME" again`
         );
-      });
+      })
+      .finally(() => setLoading(false));
     console.log(newUsername);
   };
 
   const handleUpdatePassword = (e) => {
     e.preventDefault();
+    setLoading(true);
     setAdminToken(JSON.parse(window.localStorage.getItem("loggedUser")).token);
     const passwordObject = {
       password: newPassword,
@@ -88,7 +93,8 @@ function UpdateUserModal({
         alert(
           `Are you sure to change this User's password to "${newPassword}"? If so, please click "UPDATE PASSWORD" again`
         );
-      });
+      })
+      .finally(() => setLoading(false));
     console.log(newPassword);
   };
 
@@ -99,6 +105,7 @@ function UpdateUserModal({
       </div>
     );
   }
+
   return (
     <div className="background-modal tw-z-[1500] ">
       <div className="remove-user-modal tw-mt-[70%] tw-h-[80%] sm:tw-max-w-[60vh]  md:tw-mt-[30%] md:tw-h-[55%]  min-[785px]:tw-h-[65%] min-[540px]:tw-mt-[45%] xl:tw-mt-[28%] xl:tw-h-[80%] min-[1125px]:tw-mt-[40%] min-[1125px]:tw-h-[80%]  ">

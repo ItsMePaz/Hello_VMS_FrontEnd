@@ -36,14 +36,18 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
         setPurpose("");
         setContactNumber("");
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        console.log(error);
+
+        alert(`Please click "ADD" button again`);
+      })
       .finally(() => setLoading(false));
   };
 
   if (loading) {
     return (
       <div className="tw-flex tw-flex-col tw-h-screen tw-items-center tw-justify-center">
-        <LoadingSpinner />
+        <LoadingSpinner loadingMessage="Adding Visitor data to the database..." />
       </div>
     );
   }
