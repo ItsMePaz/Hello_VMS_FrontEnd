@@ -8,11 +8,13 @@ function UnitListResult({
   purpose,
   contactNumber,
   userId,
+  dateVisited,
 }) {
   return (
     <tr>
       <td>{firstName}</td>
       <td>{lastName}</td>
+      <td>{dateVisited}</td>
       <td>{contactNumber}</td> <td>{purpose}</td>
       <td>{timeVisited}</td>
       <td>{timeExited}</td>

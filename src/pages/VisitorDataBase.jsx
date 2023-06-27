@@ -12,19 +12,20 @@ import ResultsByDateCell from "../components/ResultsByDateCell";
 import ResultsByContactNumberCell from "../components/ResultsByContactNumberCell";
 import ResultsByPurposeCell from "../components/ResultsByPurposeCell";
 import ResultsByLastNameCell from "../components/ResultsByLastNameCell";
-
+import ResultsByUniqueIdCell from "../components/ResultsByUniqueIdCell";
 function VisitorDataBase({ user, setUser }) {
   return (
     <div>
       <PageHeader bgColor=" tw-bg-[#59e0f2]" />
       <br />
       <PageTitle title="VISITOR DATABASE" />
-      <div className="tw-z-[2000] tw-overflow-auto tw-h-[50vh]">
+      <div className="tw-z-[2500] tw-overflow-auto tw-h-[50vh]">
         <ResultsByNameCell />
         <ResultsByLastNameCell />
         <ResultsByDateCell />
         <ResultsByContactNumberCell />
         <ResultsByPurposeCell />
+        <ResultsByUniqueIdCell />
       </div>
 
       <BackLogoutBtn user={user} setUser={setUser} />

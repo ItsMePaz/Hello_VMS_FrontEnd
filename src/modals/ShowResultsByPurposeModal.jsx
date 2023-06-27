@@ -4,7 +4,7 @@ import "../styles/ResultsModal.css";
 import { useNavigate } from "react-router-dom";
 import visitorService from "../services/visitorService";
 import UnitListResult from "../components/UnitListResult";
-function ShowResultsByNameModal({ setShow, firstName, lastName }) {
+function ShowResultsByPurposeModal({ setShow, firstName, purposeOfEntry }) {
   const [visitorList, setVisitorList] = useState([]);
 
   useEffect(() => {
@@ -20,23 +20,24 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
       });
   }, []);
 
-  const lastNameGroups = {
-    lastName: visitorList.filter((obj) => obj.lastName === lastName),
+  const purposeOfEntryGroups = {
+    purposeOfEntry: visitorList.filter(
+      (obj) => obj.purposeOfEntry === purposeOfEntry
+    ),
   };
 
-  const lastNameObject = lastNameGroups.lastName;
-  console.log(lastNameObject);
+  const purposeOfEntryObject = purposeOfEntryGroups.purposeOfEntry;
+  console.log(purposeOfEntryObject);
 
   return (
     <div className="background-modal-results tw-z-[4000]">
       <div className="remove-user-modal-results ">
         <div className="modal-title tw-flex tw-justify-center">
-          Showing Results with last name:{" "}
-          <strong style={{ marginLeft: ".5rem" }}>{lastName}</strong>
+          Showing Results with the purpose:{" "}
+          <strong style={{ marginLeft: ".5rem" }}>{purposeOfEntry}</strong>
         </div>
         <br />
         <div className="reverse">
-          {" "}
           <table className="table-body-placement tw-overflow-auto tw-overflow-x-auto">
             <thead>
               <tr>
@@ -54,18 +55,18 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
           <div className="table-body-placement tw-overflow-auto">
             <table>
               <tbody>
-                {lastNameObject.map((aLastName) => (
+                {purposeOfEntryObject.map((aPurposeOfEntry) => (
                   <UnitListResult
-                    key={lastNameObject._id}
-                    aLastName={lastNameObject}
-                    lastName={aLastName.lastName}
-                    firstName={aLastName.firstName}
-                    timeVisited={aLastName.timeVisited}
-                    timeExited={aLastName.timeExited}
-                    purpose={aLastName.purposeOfEntry}
-                    contactNumber={aLastName.contactNumber}
-                    userId={aLastName.id}
-                    dateVisited={aLastName.dateVisited}
+                    key={purposeOfEntryObject._id}
+                    aPurposeOfEntry={purposeOfEntryObject}
+                    lastName={aPurposeOfEntry.lastName}
+                    firstName={aPurposeOfEntry.firstName}
+                    timeVisited={aPurposeOfEntry.timeVisited}
+                    timeExited={aPurposeOfEntry.timeExited}
+                    purpose={aPurposeOfEntry.purposeOfEntry}
+                    contactNumber={aPurposeOfEntry.contactNumber}
+                    userId={aPurposeOfEntry.id}
+                    dateVisited={aPurposeOfEntry.dateVisited}
                   />
                 ))}
               </tbody>
@@ -92,4 +93,4 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
   );
 }
 
-export default ShowResultsByNameModal;
+export default ShowResultsByPurposeModal;

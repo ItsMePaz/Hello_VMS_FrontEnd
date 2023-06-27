@@ -24,10 +24,12 @@ function BackLogoutBtn({ user, setUser }) {
       ) : null}
       <div>
         <button onClick={() => navigate(-1)}>
-          <div className="back-logout-btn back-placement tw-z-[1019]">BACK</div>
+          <div className="back-logout-btn back-placement tw-z-[1019] max-[280px]:tw-left-[2%] max-[280px]:tw-bottom-[2%]  max-[280px]:tw-z-[3000]">
+            BACK
+          </div>
         </button>
         <button
-          className="back-logout-btn logout-placement tw-z-[1019]"
+          className="back-logout-btn logout-placement tw-z-[1019] max-[280px]:tw-right-[2%] max-[280px]:tw-bottom-[2%] max-[280px]:tw-z-[3000] tw-h-[40px]"
           onClick={() => {
             /* handleLogout(); */
             setShowLogout(true);

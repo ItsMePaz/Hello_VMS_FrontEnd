@@ -31,7 +31,7 @@ function ResultsByLastNameCell() {
               <input
                 className="tw-w-[10rem]  lg:tw-w-[300px] tw-rounded-xl tw-px-[2%]"
                 type="text"
-                placeholder="Input first name here"
+                placeholder="Input last name here"
                 name="lastname"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}

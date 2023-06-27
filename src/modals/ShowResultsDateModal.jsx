@@ -4,7 +4,7 @@ import "../styles/ResultsModal.css";
 import { useNavigate } from "react-router-dom";
 import visitorService from "../services/visitorService";
 import UnitListResult from "../components/UnitListResult";
-function ShowResultsByNameModal({ setShow, firstName, lastName }) {
+function ShowResultsDateModal({ setShow, firstName, lastName, dateVisited }) {
   const [visitorList, setVisitorList] = useState([]);
 
   useEffect(() => {
@@ -20,23 +20,22 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
       });
   }, []);
 
-  const lastNameGroups = {
-    lastName: visitorList.filter((obj) => obj.lastName === lastName),
+  const dateGroups = {
+    dateVisited: visitorList.filter((obj) => obj.dateVisited === dateVisited),
   };
 
-  const lastNameObject = lastNameGroups.lastName;
-  console.log(lastNameObject);
+  const dateObject = dateGroups.dateVisited;
+  console.log(dateObject);
 
   return (
     <div className="background-modal-results tw-z-[4000]">
       <div className="remove-user-modal-results ">
         <div className="modal-title tw-flex tw-justify-center">
-          Showing Results with last name:{" "}
-          <strong style={{ marginLeft: ".5rem" }}>{lastName}</strong>
+          Showing Results with the date:{" "}
+          <strong style={{ marginLeft: ".5rem" }}>{dateVisited}</strong>
         </div>
         <br />
         <div className="reverse">
-          {" "}
           <table className="table-body-placement tw-overflow-auto tw-overflow-x-auto">
             <thead>
               <tr>
@@ -54,18 +53,18 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
           <div className="table-body-placement tw-overflow-auto">
             <table>
               <tbody>
-                {lastNameObject.map((aLastName) => (
+                {dateObject.map((aDate) => (
                   <UnitListResult
-                    key={lastNameObject._id}
-                    aLastName={lastNameObject}
-                    lastName={aLastName.lastName}
-                    firstName={aLastName.firstName}
-                    timeVisited={aLastName.timeVisited}
-                    timeExited={aLastName.timeExited}
-                    purpose={aLastName.purposeOfEntry}
-                    contactNumber={aLastName.contactNumber}
-                    userId={aLastName.id}
-                    dateVisited={aLastName.dateVisited}
+                    key={dateObject._id}
+                    aDate={dateObject}
+                    lastName={aDate.lastName}
+                    firstName={aDate.firstName}
+                    timeVisited={aDate.timeVisited}
+                    timeExited={aDate.timeExited}
+                    dateVisited={aDate.dateVisited}
+                    purpose={aDate.purposeOfEntry}
+                    contactNumber={aDate.contactNumber}
+                    userId={aDate.id}
                   />
                 ))}
               </tbody>
@@ -92,4 +91,4 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
   );
 }
 
-export default ShowResultsByNameModal;
+export default ShowResultsDateModal;

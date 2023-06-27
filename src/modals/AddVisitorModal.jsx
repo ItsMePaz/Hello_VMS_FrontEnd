@@ -53,7 +53,7 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
   }
   return (
     <div className="background-modal tw-z-[1500] ">
-      <div className="remove-user-modal ">
+      <div className="remove-user-modal tw-h-[60vh]">
         ADD NEW VISITOR
         <br />
         <form onSubmit={handleAddVisitor}>

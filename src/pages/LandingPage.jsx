@@ -3,6 +3,8 @@ import WaveAnimation from "../components/WaveAnimation";
 import "../styles/landingPage.css";
 import admin from "../images/admin.png";
 import groupUsers from "../images/groupUsers.png";
+import vmsLogo from "../images/vmslogo.png";
+import Logo from "../images/placeholder.png";
 
 function LandingPage() {
   return (
@@ -17,8 +19,11 @@ function LandingPage() {
       </h1>
       <div className="header-color">
         <div className="logo-placement">
+          <div className="company-logo tw-bg-white tw-mr-[5vh]">
+            <img src={vmsLogo} alt="placeholder" />
+          </div>
           <div className="company-logo">
-            <img src="" alt="placeholder" />
+            <img src={Logo} alt="placeholder" />
           </div>
         </div>
       </div>

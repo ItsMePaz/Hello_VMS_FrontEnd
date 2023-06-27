@@ -28,45 +28,50 @@ function ShowResultsByNameModal({ setShow, firstName, lastName }) {
   console.log(firstNameObject);
 
   return (
-    <div className="background-modal-results tw-z-[1020]">
+    <div className="background-modal-results tw-z-[4000]">
       <div className="remove-user-modal-results ">
-        <div className="tw-flex tw-justify-center">
-          Showing Results with first name{" "}
+        <div className="modal-title tw-flex tw-justify-center">
+          Showing Results with first name:{" "}
           <strong style={{ marginLeft: ".5rem" }}>{firstName}</strong>
         </div>
         <br />
-        <table className="table-headings-placement">
-          <thead>
-            <tr>
-              <td>FIRST NAME</td>
-              <td>LAST NAME</td>
-              <td>CONTACT NUMBER</td>
-              <td>PURPOSE OF ENTRY</td>
-              <td>TIME OF ENTRY</td>
-              <td>TIME OF EXIT</td>
-              <td>UNIQUE ID</td>
-            </tr>
-          </thead>
-        </table>{" "}
-        <div className="table-body-placement tw-overflow-auto">
-          <table>
-            <tbody>
-              {firstNameObject.map((aFirstName) => (
-                <UnitListResult
-                  key={firstNameObject._id}
-                  aFirstName={firstNameObject}
-                  firstName={aFirstName.firstName}
-                  lastName={aFirstName.lastName}
-                  timeVisited={aFirstName.timeVisited}
-                  timeExited={aFirstName.timeExited}
-                  purpose={aFirstName.purposeOfEntry}
-                  contactNumber={aFirstName.contactNumber}
-                  userId={aFirstName.id}
-                />
-              ))}
-            </tbody>
-          </table>
+        <div className="reverse">
+          <table className="table-body-placement tw-overflow-auto tw-overflow-x-auto">
+            <thead>
+              <tr>
+                <td>FIRST NAME</td>
+                <td>LAST NAME</td>
+                <td>DATE VISITED</td>
+                <td>CONTACT NUMBER</td>
+                <td>PURPOSE OF ENTRY</td>
+                <td>TIME OF ENTRY</td>
+                <td>TIME OF EXIT</td>
+                <td>UNIQUE ID</td>
+              </tr>
+            </thead>
+          </table>{" "}
+          <div className="table-body-placement tw-overflow-auto">
+            <table>
+              <tbody>
+                {firstNameObject.map((aFirstName) => (
+                  <UnitListResult
+                    key={firstNameObject._id}
+                    aFirstName={firstNameObject}
+                    firstName={aFirstName.firstName}
+                    lastName={aFirstName.lastName}
+                    timeVisited={aFirstName.timeVisited}
+                    timeExited={aFirstName.timeExited}
+                    purpose={aFirstName.purposeOfEntry}
+                    contactNumber={aFirstName.contactNumber}
+                    userId={aFirstName.id}
+                    dateVisited={aFirstName.dateVisited}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
+
         <div className="modal-button-placement-results ">
           <button className="modalButton" onClick={() => setShow(null)}>
             CLOSE

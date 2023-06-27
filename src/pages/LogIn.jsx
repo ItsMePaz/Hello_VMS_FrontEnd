@@ -13,6 +13,7 @@ import LoadingSpinner from "../components/LoadingSpinner";
 import Menu from "./Menu";
 import WaveAnimation from "../components/WaveAnimation";
 import visitorService from "../services/visitorService";
+import vmsLogo from "../images/vmslogo.png";
 function LogIn(
   {
     /*   loading,
@@ -66,11 +67,25 @@ function LogIn(
 
   const loginForm = () => {
     return (
-      <div className="logIn-card-position">
+      <div className="logIn-card-position tw-z-[2000]">
         <h1 className="title">VISITOR MANAGEMENT SYSTEM</h1>
         <br></br>
-        <div className="login">
-          <img src={Logo} alt="" className="tw-mb-[3em]" />
+        <div className="login ">
+          <div className="tw-flex tw-justify-center tw-gap-[2em]">
+            <div className="">
+              <img
+                src={vmsLogo}
+                alt="placeholder"
+                className=" tw-h-[6em] tw-min-w-[6em] "
+              />
+            </div>
+            <img
+              src={Logo}
+              alt=""
+              className="tw-mb-[3em] tw-w-[8em] tw-h-[6em] tw-mr-[-10%]"
+            />
+          </div>
+
           <form onSubmit={handleLogin}>
             <div className="tw-flex tw-flex-col tw-items-center">
               {" "}
@@ -130,7 +145,9 @@ function LogIn(
     <div>
       {loginForm()}{" "}
       <button onClick={() => navigate(-1)}>
-        <div className="back-logout-btn back-placement tw-z-[1020]">BACK</div>
+        <div className="back-logout-btn back-placement tw-z-[1020] tw-bottom-[1em]">
+          BACK
+        </div>
       </button>
       <WaveAnimation />
     </div>

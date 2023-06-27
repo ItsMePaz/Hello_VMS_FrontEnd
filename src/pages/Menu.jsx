@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/menu.css";
+import Logo from "../images/placeholder.png";
+
 import database from "../images/database.png";
 import analytics from "../images/analytics.png";
 import monitor from "../images/monitor.png";
@@ -36,8 +38,12 @@ function Menu() {
       <h1 className="title">VISITOR MANAGEMENT SYSTEM</h1>
       <div className="header-color">
         <div className="logo-placement">
-          <div className="company-logo">
-            <img src="" alt="placeholder" />
+          <div className="tw-mb-[-2vh] tw-mt-[-3vh]">
+            <img
+              src={Logo}
+              alt=""
+              className="tw-mb-[3em] tw-w-[8em] tw-h-[6em]"
+            />
           </div>
         </div>
       </div>
