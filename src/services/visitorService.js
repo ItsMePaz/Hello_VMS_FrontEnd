@@ -8,7 +8,7 @@ function setToken(newToken) {
   token = `Bearer ${newToken}`;
 }
 
-function getVisitors() {
+async function getVisitors() {
   /* return fetch(baseURL)
     .then((res) => res.json())
     .then((data) => data); */

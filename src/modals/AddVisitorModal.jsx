@@ -88,12 +88,12 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
               onChange={(e) => setPurpose(e.target.value)}
             >
               <option selected> Choose Purpose</option>
-              <option value="Enrollment"> Enrollment</option>
+              <option value="Enrollment"> Enrollment/ Inquiry</option>
               <option value="Interview">Interview</option>
-              <option value="School Event">School Event</option>
-              <option value="Registrar">Registrar</option>
-              <option value="Parent & Teacher Meeting">
-                Parent & Teacher Meeting
+              <option value="AlumniVisit">Alumni Visit</option>
+              <option value="ParentGuardianVisit">
+                {" "}
+                Parent/ Guardian Visit
               </option>
             </select>
             {/*    <input

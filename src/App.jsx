@@ -1,6 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
+import visitorService from "./services/visitorService";
 import Menu from "./pages/Menu";
 import LogIn from "./pages/LogIn";
 import VisitorDataBase from "./pages/VisitorDataBase";
@@ -11,11 +12,22 @@ import UserManagement from "./pages/UserManagement";
 import DatabaseResults from "./pages/DatabaseResults";
 import LandingPage from "./pages/LandingPage";
 import LoginAdmin from "./pages/LoginAdmin";
-
+import { useEffect } from "react";
 function App() {
   const [userList, setUserList] = useState([]);
   const [visitorList, setVisitorList] = useState([]);
+  useEffect(() => {
+    visitorService
+      .getVisitors()
+      .then((res) => {
+        setVisitorList(res);
 
+        console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   /*  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -81,7 +93,12 @@ function App() {
       />
       <Route
         path="/Hello_VMS_FrontEnd/menu/analytics"
-        element={<Analytics /* user={user} setUser={setUser} */ />}
+        element={
+          <Analytics
+            visitorList={visitorList}
+            setVisitorList={setVisitorList} /* user={user} setUser={setUser} */
+          />
+        }
       />
       <Route
         path="/Hello_VMS_FrontEnd/menu/visitor_database/database_results"
