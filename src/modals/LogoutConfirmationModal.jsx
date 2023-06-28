@@ -8,7 +8,7 @@ function LogoutConfirmationModal({ setShowLogout }) {
 
   const handleLogout = () => {
     window.localStorage.clear();
-    navigate("/Hello_VMS_FrontEnd/", { replace: true });
+    navigate("/", { replace: true });
     console.log("You have been loggedout");
   };
 

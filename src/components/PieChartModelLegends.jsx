@@ -2,7 +2,7 @@ import React from "react";
 
 function PieChartModelLegends() {
   return (
-    <div className="tw-flex tw-flex-col tw-justify-center tw-ml-[8vh] tw-mr-[-15vh] tw-mt-[2vh]">
+    <div className="tw-flex tw-flex-col tw-justify-center tw-ml-[8vh] tw-mr-[-9vh] tw-mt-[2vh]">
       <div className="tw-bg-[#0088FE] tw-text-white tw-px-[5px] tw-rounded tw-mb-[1vh]">
         Enrollment/ Inquiry
       </div>

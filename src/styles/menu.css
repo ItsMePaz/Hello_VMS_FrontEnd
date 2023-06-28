@@ -148,15 +148,17 @@
     align-items: center;
     justify-content: center;
     gap: 5em;
+    margin-left: 110vh;
   }
 
   .visitor-database {
-    margin-top: 9em;
-    margin-right: -5em;
+    margin-top: 10em;
+    margin-right: -10em;
+    margin-left: 1em;
   }
   .analytics {
-    margin-top: 9em;
-    margin-left: -5em;
+    margin-top: -16.8em;
+    margin-left: 20em;
   }
 
   .monitoring-mode {

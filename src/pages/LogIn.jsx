@@ -41,7 +41,7 @@ function LogIn(
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user?.token) navigate("/Hello_VMS_FrontEnd/menu");
+    if (user?.token) navigate("/menu");
   }, [user, navigate]);
 
   /*   useEffect(() => {

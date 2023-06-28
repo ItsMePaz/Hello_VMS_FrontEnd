@@ -106,7 +106,7 @@ function Analytics({ visitorList }) {
   /* End of Setting Parent Quantity */
 
   useEffect(() => {
-    if (window.localStorage.length === 0) navigate("/Hello_VMS_FrontEnd/");
+    if (window.localStorage.length === 0) navigate("/");
   }, []);
 
   useEffect(() => {
@@ -122,7 +122,7 @@ function Analytics({ visitorList }) {
       <br />
       <PageTitle title="OVERALL ANALYTICS" />
       <br />
-      <div className="tw-fixed">
+      <div className="tw-fixed tw-ml-[50%] tw-translate-x-[-45%] sm:tw-mt-[6vh] xl:tw-mt-[1vh]">
         {" "}
         <div className="tw-flex tw-tw-justify-center tw-mt-[-7em] tw-mb-[8em] ">
           <PieChartModelLegends />

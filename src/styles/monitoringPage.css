@@ -1,7 +1,48 @@
+.remove-user-modal-results {
+  position: absolute;
+  margin: 0 auto;
+  display: flex;
+  z-index: 2000;
+  background-color: #ffffff;
+  gap: 1em;
+  padding: 1em;
+  width: 80%;
+  height: 80%;
+  border-radius: 5px;
+  flex-direction: column;
+  transform: translate(0%, 0%);
+  font-size: 15px;
+}
+
+.background-modal-results {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.316);
+  width: 110vw;
+  height: 100%;
+  z-index: 2000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-button-placement-results {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 20px;
+  justify-content: center;
+  gap: 1em;
+}
+
 .table-headings-placement {
   max-height: 200px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .table-body-placement {
@@ -14,10 +55,13 @@
 
 .table-headings-placement td {
   /*ok*/
+  position: relative;
   border: 1px solid black;
-  padding: 10px;
+  padding: 6px;
   text-align: center;
-  min-width: 250px;
+  max-width: 9em;
+  min-width: 9em;
+  word-wrap: break-word;
 }
 
 ::-webkit-scrollbar {
@@ -27,8 +71,312 @@
 
 .table-body-placement td {
   border: 1px solid black;
-  padding: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 0;
+  padding-bottom: 0;
   text-align: left;
-  min-width: 250px;
-  max-width: 250px;
+  max-width: 9em;
+  min-width: 9em;
+
+  position: relative;
+  word-wrap: break-word;
+}
+
+@media screen and (min-width: 280px) and (max-width: 708px) {
+  .cell-border {
+    max-width: 200px;
+    height: 200px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ReversingTable */
+
+  .modal-title {
+    display: flex;
+    flex-direction: column;
+  }
+  .reverse {
+    display: flex;
+    flex-direction: row;
+  }
+  tr {
+    display: block;
+    float: left;
+  }
+  tbody td {
+    /*ok*/
+
+    font-size: 13px;
+    position: relative;
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+    max-width: 9em;
+    min-width: 9em;
+    word-wrap: break-word;
+    display: block;
+    max-height: 40px;
+    min-height: 40px;
+  }
+
+  thead td {
+    font-size: 13px;
+    margin-left: 7vh;
+    display: flex;
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+    max-width: 30em;
+    min-width: 30em;
+    word-wrap: break-word;
+    display: block;
+    max-height: 40px;
+    min-height: 40px;
+  }
+  thead {
+    margin-right: 13vh;
+    margin-left: 6vh;
+  }
+
+  tbody {
+    padding-left: 9.3em;
+    max-width: 30em;
+    min-width: 30em;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .cell-border > div {
+    flex: 0 0 3em;
+  }
+
+  .back-drop {
+    width: 300px;
+    height: 240px;
+  }
+
+  .cell-title-border {
+    display: none;
+  }
+
+  .remove-user-modal-results {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .modalButton {
+    color: white;
+    background-color: black;
+
+    border: 1px black solid;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    width: 75px;
+  }
+  .modal-button-placement-results {
+    display: flex;
+
+    justify-content: center;
+    gap: 1em;
+
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, 0%);
+  }
+
+  .cellButton {
+    color: white;
+    background-color: black;
+
+    border: 1px black solid;
+
+    border-radius: 10px;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+}
+
+@media only screen and (min-width: 709px) and (max-width: 807px) {
+  .cell-border {
+    max-width: 550px;
+    height: 5em;
+  }
+
+  .cell-border > div {
+    flex: 0 0 10em;
+  }
+
+  .back-drop {
+    width: 650px;
+  }
+
+  /*  */
+  .table-body-placement {
+    min-height: 80vh;
+  }
+  .remove-user-modal-results {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+    flex-direction: column;
+  }
+
+  .modalButton {
+    color: white;
+    background-color: black;
+
+    border: 1px black solid;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .modal-title {
+    display: flex;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .reverse {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+  }
+  tr {
+    display: block;
+    float: left;
+  }
+  tbody td {
+    /*ok*/
+
+    font-size: 20px;
+    position: relative;
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+    max-width: 9em;
+    min-width: 9em;
+    word-wrap: break-word;
+    display: block;
+    max-height: 80px;
+    min-height: 80px;
+  }
+
+  thead td {
+    font-size: 20px;
+    margin-left: 2vh;
+    display: flex;
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+    max-width: 30em;
+    min-width: 30em;
+    word-wrap: break-word;
+    display: block;
+    max-height: 80px;
+    min-height: 80px;
+  }
+  thead {
+    margin-right: 0vh;
+    margin-left: 0vh;
+  }
+
+  tbody {
+    padding-left: 3em;
+    max-width: 30em;
+    min-width: 30em;
+    display: flex;
+    flex-direction: row;
+    margin-right: 0vh;
+  }
+}
+
+@media screen and (min-width: 808px) and (max-width: 1023px) {
+  .table-body-placement {
+    min-height: 80vh;
+  }
+  .modal-title {
+    display: flex;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .reverse {
+    display: flex;
+    flex-direction: row;
+    height: 80vh;
+  }
+  tr {
+    display: block;
+    float: left;
+  }
+  tbody td {
+    /*ok*/
+
+    font-size: 20px;
+    position: relative;
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+    max-width: 9em;
+    min-width: 9em;
+    word-wrap: break-word;
+    display: block;
+    max-height: 80px;
+    min-height: 80px;
+  }
+
+  thead td {
+    font-size: 20px;
+    margin-left: 2vh;
+    display: flex;
+    border: 1px solid black;
+    padding: 6px;
+    text-align: center;
+    max-width: 30em;
+    min-width: 30em;
+    word-wrap: break-word;
+    display: block;
+    max-height: 80px;
+    min-height: 80px;
+  }
+  thead {
+    margin-right: 0vh;
+    margin-left: 0vh;
+  }
+
+  tbody {
+    padding-left: 2em;
+    max-width: 30em;
+    min-width: 30em;
+    display: flex;
+    flex-direction: row;
+    margin-right: 7vh;
+  }
 }

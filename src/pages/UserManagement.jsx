@@ -18,8 +18,7 @@ function UserManagement({ userList, setUserList }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (window.localStorage.length === 0)
-      navigate("/Hello_VMS_FrontEnd/", { replace: true });
+    if (window.localStorage.length === 0) navigate("/", { replace: true });
   }, []);
 
   useEffect(() => {
@@ -45,7 +44,7 @@ function UserManagement({ userList, setUserList }) {
 
   const handleLogout = () => {
     window.localStorage.clear();
-    navigate("/Hello_VMS_FrontEnd/", { replace: true });
+    navigate("/", { replace: true });
     console.log("You have been loggedout");
   };
 

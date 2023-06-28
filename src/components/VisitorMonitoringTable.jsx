@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UnitListVisitor from "./UnitListVisitor";
+import UnitListVisitor from "./unitListVisitor";
 import { useEffect } from "react";
 import visitorService from "../services/visitorService";
 

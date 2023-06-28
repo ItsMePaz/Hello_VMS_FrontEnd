@@ -35,10 +35,10 @@ function App() {
   const [user, setUser] = useState(null); */
   return (
     <Routes>
-      <Route path="/Hello_VMS_FrontEnd/" element={<LandingPage />} />
+      <Route path="/" element={<LandingPage />} />
 
       <Route
-        path="/Hello_VMS_FrontEnd/login_user"
+        path="/login_user"
         element={
           <LogIn
           /* loading={loading}
@@ -52,10 +52,10 @@ function App() {
           />
         }
       />
-      <Route path="/Hello_VMS_FrontEnd/login_admin" element={<LoginAdmin />} />
+      <Route path="/login_admin" element={<LoginAdmin />} />
 
       <Route
-        path="/Hello_VMS_FrontEnd/menu"
+        path="/menu"
         /* component={() => (
           <Menu
             authorizedUser={authorizedUser}
@@ -69,17 +69,17 @@ function App() {
         }
       />
       <Route
-        path="/Hello_VMS_FrontEnd/user_management"
+        path="/user_management"
         element={
           <UserManagement userList={userList} setUserList={setUserList} />
         }
       />
       <Route
-        path="/Hello_VMS_FrontEnd/menu/visitor_database"
+        path="/menu/visitor_database"
         element={<VisitorDataBase /* user={user} setUser={setUser} */ />}
       />
       <Route
-        path="/Hello_VMS_FrontEnd/menu/monitoring"
+        path="/menu/monitoring"
         element={
           <Monitoring
             visitorList={visitorList}
@@ -87,12 +87,9 @@ function App() {
           />
         }
       />
+      <Route path="/monitoring/time-in-visitor" element={<TimeInVisitor />} />
       <Route
-        path="/Hello_VMS_FrontEnd/monitoring/time-in-visitor"
-        element={<TimeInVisitor />}
-      />
-      <Route
-        path="/Hello_VMS_FrontEnd/menu/analytics"
+        path="/menu/analytics"
         element={
           <Analytics
             visitorList={visitorList}
@@ -101,7 +98,7 @@ function App() {
         }
       />
       <Route
-        path="/Hello_VMS_FrontEnd/menu/visitor_database/database_results"
+        path="/menu/visitor_database/database_results"
         element={<DatabaseResults />}
       />
     </Routes>

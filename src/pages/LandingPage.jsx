@@ -28,13 +28,13 @@ function LandingPage() {
         </div>
       </div>
       <section className="menu-options tw-z-[1020]">
-        <Link className="link" to="/Hello_VMS_FrontEnd/login_user">
+        <Link className="link" to="/login_user">
           <div className="visitor-database user">
             USER <br />
             <img src={groupUsers} alt="Database_logo" />
           </div>{" "}
         </Link>
-        <Link className="link" to="/Hello_VMS_FrontEnd/login_admin">
+        <Link className="link" to="/login_admin">
           <div className="visitor-database admin">
             ADMIN <br />
             <img src={admin} alt="Database_logo" />

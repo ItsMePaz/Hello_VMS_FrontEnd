@@ -15,7 +15,7 @@ function Menu() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (window.localStorage.length === 0) navigate("/Hello_VMS_FrontEnd/");
+    if (window.localStorage.length === 0) navigate("/");
   }, []);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function Menu() {
 
   const handleLogout = () => {
     window.localStorage.clear();
-    navigate("/Hello_VMS_FrontEnd/", { replace: true });
+    navigate("/", { replace: true });
     console.log("You have been loggedout");
     /* setUser(null); */
   };
@@ -48,18 +48,18 @@ function Menu() {
         </div>
       </div>
       <section className="menu-options">
-        <Link className="links" to="/Hello_VMS_FrontEnd/menu/visitor_database">
+        <Link className="links" to="/menu/visitor_database">
           <div className="visitor-database">
             VISITOR <br /> DATABASE <br />
             <img src={database} alt="Database_logo" />
           </div>{" "}
         </Link>
-        <Link className="links" to="/Hello_VMS_FrontEnd/menu/monitoring">
+        <Link className="links" to="/menu/monitoring">
           <div className="monitoring-mode">
             MONITOR <br /> MODE <br /> <img src={monitor} alt="Monitor_logo" />
           </div>
         </Link>
-        <Link className="links " to="/Hello_VMS_FrontEnd/menu/analytics">
+        <Link className="links " to="/menu/analytics">
           <div className="analytics">
             VISITOR <br /> ANALYTICS <br />{" "}
             <img src={analytics} alt="Analytics_logo" />
@@ -73,7 +73,7 @@ function Menu() {
             className="links"
             onClick={() => {
               handleLogout();
-            }} /* to="/Hello_VMS_FrontEnd/" */
+            }} /* to="/" */
           >
             <p className="logout-btn ">LOG OUT</p>
           </button>

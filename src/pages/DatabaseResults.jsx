@@ -9,7 +9,7 @@ function DatabaseResults() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) navigate("/Hello_VMS_FrontEnd/");
+    if (!user) navigate("/");
   }, []);
 
   useEffect(() => {

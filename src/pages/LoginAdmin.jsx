@@ -30,7 +30,7 @@ function LoginAdmin() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user?.token) navigate("/Hello_VMS_FrontEnd/user_management");
+    if (user?.token) navigate("/user_management");
   }, [user, navigate]);
 
   /* Admin Login */
