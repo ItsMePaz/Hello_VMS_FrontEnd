@@ -29,15 +29,25 @@ function ResultsByPurposeCell() {
               onSubmit={handleSearchByPurpose}
               className="xl:tw-flex-col-reverse tw-flex-col tw-gap-[20px] tw-text-center tw-mt-[2%]"
             >
-              <input
+              <select
+                id="purposeList"
                 className="tw-w-[10rem]  lg:tw-w-[300px] tw-rounded-xl tw-px-[2%]"
-                type="text"
                 placeholder="Input purpose here"
                 name="purpose"
                 value={purposeOfEntry}
                 onChange={(e) => setPurposeOfEntry(e.target.value)}
                 required
-              />
+              >
+                {" "}
+                <option selected> Choose Purpose</option>
+                <option value="Enrollment"> Enrollment</option>
+                <option value="Interview">Interview</option>
+                <option value="School Event">School Event</option>
+                <option value="Registrar">Registrar</option>
+                <option value="Parent & Teacher Meeting">
+                  Parent & Teacher Meeting
+                </option>
+              </select>
             </form>
           </div>
 

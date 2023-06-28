@@ -54,6 +54,7 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
   return (
     <div className="background-modal tw-z-[1500] ">
       <div className="remove-user-modal tw-h-[60vh]">
+        {/*  */}
         ADD NEW VISITOR
         <br />
         <form onSubmit={handleAddVisitor}>
@@ -79,13 +80,29 @@ function AddVisitorModal({ setShow, visitorList, setVisitorList }) {
           </div>
           <div className="tw-flex tw-flex-col">
             <label>PURPOSE </label>
-            <input
+            <select
+              name="purpose"
+              id="purposeList"
+              value={purpose}
+              className="tw-border-solid tw-border-2 tw-border-slate-500 tw-p-2"
+              onChange={(e) => setPurpose(e.target.value)}
+            >
+              <option selected> Choose Purpose</option>
+              <option value="Enrollment"> Enrollment</option>
+              <option value="Interview">Interview</option>
+              <option value="School Event">School Event</option>
+              <option value="Registrar">Registrar</option>
+              <option value="Parent & Teacher Meeting">
+                Parent & Teacher Meeting
+              </option>
+            </select>
+            {/*    <input
               type="text"
               name="purpose"
               value={purpose}
               className="tw-border-solid tw-border-2 tw-border-slate-500 tw-p-2"
               onChange={(e) => setPurpose(e.target.value)}
-            />
+            /> */}
           </div>
           <div className="tw-flex tw-flex-col">
             <label>CONTACT NUMBER </label>
