@@ -1,6 +1,5 @@
 import React from "react";
 import visitorService from "../services/visitorService";
-import "../styles/monitoringPage.css";
 import ExitModal from "../modals/ExitModal";
 import { useState } from "react";
 
@@ -16,13 +15,6 @@ function UnitListVisitor({
   setVisitorList,
   visitorList,
 }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [newDate, setNewDate] = useState("");
-  const [isExitConfirmed, setIsExitConfirmed] = useState(false);
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
   // const handleTimeExit = () => {
   //   visitorService
   //     .exitVisitor(visitorId)
@@ -42,6 +34,12 @@ function UnitListVisitor({
   //       console.error("Error updating visitor's data:", error);
   //     });
   // };
+  const [isOpen, setIsOpen] = useState(false);
+  const [newDate, setNewDate] = useState("");
+  const [isExitConfirmed, setIsExitConfirmed] = useState(false);
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleTimeExit = () => {
     const today = new Date();
@@ -55,6 +53,7 @@ function UnitListVisitor({
   const handleCancel = () => {
     setIsOpen(false);
   };
+
   return (
     <tr>
       <td>
@@ -65,31 +64,17 @@ function UnitListVisitor({
       <td>{dateVisited}</td>
       <td>{timeVisited}</td>
       <td>
-        {/* {timeExited ? (
-          timeExited
-        ) : (
-          <button  className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-mid
-          dle"
-            onClick={handleTimeExit}
-          >
-            CLICK TO TIME OUT
-          </button>
-        )} */}
         {isExitConfirmed ? (
           <div>{newDate}</div>
         ) : (
           <>
             <div>{newDate}</div>
-            <button
-              className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-mid
-          dle"
-              onClick={toggleModal}
-              disabled={isExitConfirmed}
-            >
-              CLICK TO TIME OUT
+            <button onClick={toggleModal} disabled={isExitConfirmed}>
+              CLICK
             </button>
           </>
         )}
+
         {isOpen && (
           <ExitModal
             toggleModal={toggleModal}
