@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import UnitListVisitor from "./unitListVisitor";
+import UnitListVisitor from "./UnitListVisitor";
 import { useEffect } from "react";
 import visitorService from "../services/visitorService";
 
@@ -23,30 +23,25 @@ function VisitorMonitoringTable({ visitorList, setVisitorList }) {
         <thead>
           <tr>
             <td>VISITOR'S NAME</td>
-            <td>TIME OF ENTRY</td>
-            <td>TIME OF EXIT</td>
+
             <td>PURPOSE OF ENTRY</td>
             <td>CONTACT NUMBER</td>
+            <td>DATE VISITED</td>
+            <td>TIME OF ENTRY</td>
+            <td>TIME OF EXIT</td>
           </tr>
         </thead>
       </table>{" "}
       <div className="table-body-placement tw-overflow-auto">
         <table>
           <tbody>
-            {/*    <tr>
-              <td>{visitorName}</td>
-              <td>{timeOfEntry}</td>
-              <td>{timeOfExit}</td>
-              <td>{purposeOfEntry}</td>
-              <td>{idReturnNumber}</td>
-            </tr> */}
-
             {visitorList.map((aVisitor) => (
               <UnitListVisitor
-                key={visitorList._id}
+                key={aVisitor.id}
                 aVisitor={visitorList}
                 visitorFirstName={aVisitor.firstName}
                 visitorLastName={aVisitor.lastName}
+                dateVisited={aVisitor.dateVisited}
                 timeVisited={aVisitor.timeVisited}
                 timeExited={aVisitor.timeExited}
                 purpose={aVisitor.purposeOfEntry}
