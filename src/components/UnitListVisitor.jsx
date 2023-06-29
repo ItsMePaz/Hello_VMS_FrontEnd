@@ -43,7 +43,7 @@ function UnitListVisitor({
 
   const handleTimeExit = () => {
     const today = new Date();
-    const formattedDate = today.toLocaleDateString();
+    const formattedDate = today.toLocaleTimeString();
     setNewDate(formattedDate);
     console.log("Success");
     setIsExitConfirmed(true);
@@ -69,7 +69,11 @@ function UnitListVisitor({
         ) : (
           <>
             <div>{newDate}</div>
-            <button onClick={toggleModal} disabled={isExitConfirmed}>
+            <button
+              className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-middle"
+              onClick={toggleModal}
+              disabled={isExitConfirmed}
+            >
               CLICK
             </button>
           </>
