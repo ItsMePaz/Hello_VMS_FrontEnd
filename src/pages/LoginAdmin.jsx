@@ -69,7 +69,7 @@ function LoginAdmin() {
             <img
               src={Logo}
               alt=""
-              className="tw-mb-[3em] tw-w-[8em] tw-h-[6em] tw-mr-[-10%]"
+              className="tw-mb-[3em] tw-w-[6em] tw-h-[6em] tw-mr-[-10%]"
             />
           </div>
           <form onSubmit={handleAdminLogin}>

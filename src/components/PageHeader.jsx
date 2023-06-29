@@ -10,7 +10,7 @@ function PageHeader({ bgColor }) {
           <img
             src={Logo}
             alt=""
-            className="tw-mb-[3em] tw-w-[8em] tw-h-[6em] xl:tw-mt-[3.5%] sm:tw-mt-[8%] tw-mt-[15%]"
+            className="tw-mb-[3em] tw-w-[6em] tw-h-[6em] xl:tw-mt-[4.4%] sm:tw-mt-[8%] tw-mt-[15%]"
           />
         </div>
       </div>

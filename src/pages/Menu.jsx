@@ -42,7 +42,7 @@ function Menu() {
             <img
               src={Logo}
               alt=""
-              className="tw-mb-[3em] tw-w-[8em] tw-h-[6em]"
+              className="tw-mb-[3em] tw-w-[6em] tw-h-[6em]"
             />
           </div>
         </div>
