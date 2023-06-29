@@ -74,7 +74,7 @@ function UnitListVisitor({
               onClick={toggleModal}
               disabled={isExitConfirmed}
             >
-              CLICK
+              CLICK THIS TO EXIT VISITOR
             </button>
           </>
         )}
