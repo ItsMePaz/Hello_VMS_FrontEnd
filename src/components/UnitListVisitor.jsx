@@ -1,6 +1,8 @@
 import React from "react";
 import visitorService from "../services/visitorService";
 import "../styles/monitoringPage.css";
+import ExitModal from "../modals/ExitModal";
+import { useState } from "react";
 
 function UnitListVisitor({
   visitorId,
@@ -14,26 +16,45 @@ function UnitListVisitor({
   setVisitorList,
   visitorList,
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [newDate, setNewDate] = useState("");
+  const [isExitConfirmed, setIsExitConfirmed] = useState(false);
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
+  // const handleTimeExit = () => {
+  //   visitorService
+  //     .exitVisitor(visitorId)
+  //     .then(() => {
+  //       const updatedVisitors = visitorList.map((visitor) => {
+  //         if (visitor.id === visitorId) {
+  //           return {
+  //             ...visitor,
+  //             timeExited: new Date().toLocaleTimeString(),
+  //           };
+  //         }
+  //         return visitor;
+  //       });
+  //       setVisitorList(updatedVisitors);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error updating visitor's data:", error);
+  //     });
+  // };
+
   const handleTimeExit = () => {
-    visitorService
-      .exitVisitor(visitorId)
-      .then(() => {
-        const updatedVisitors = visitorList.map((visitor) => {
-          if (visitor.id === visitorId) {
-            return {
-              ...visitor,
-              timeExited: new Date().toLocaleTimeString(),
-            };
-          }
-          return visitor;
-        });
-        setVisitorList(updatedVisitors);
-      })
-      .catch((error) => {
-        console.error("Error updating visitor's data:", error);
-      });
+    const today = new Date();
+    const formattedDate = today.toLocaleDateString();
+    setNewDate(formattedDate);
+    console.log("Success");
+    setIsExitConfirmed(true);
+    setIsOpen(false);
   };
 
+  const handleCancel = () => {
+    setIsOpen(false);
+  };
   return (
     <tr>
       <td>
@@ -44,15 +65,38 @@ function UnitListVisitor({
       <td>{dateVisited}</td>
       <td>{timeVisited}</td>
       <td>
-        {timeExited ? (
+        {/* {timeExited ? (
           timeExited
         ) : (
-          <button
-            className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-middle"
+          <button  className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-mid
+          dle"
             onClick={handleTimeExit}
           >
             CLICK TO TIME OUT
           </button>
+        )} */}
+        {isExitConfirmed ? (
+          <div>{newDate}</div>
+        ) : (
+          <>
+            <div>{newDate}</div>
+            <button
+              className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-mid
+          dle"
+              onClick={toggleModal}
+              disabled={isExitConfirmed}
+            >
+              CLICK TO TIME OUT
+            </button>
+          </>
+        )}
+        {isOpen && (
+          <ExitModal
+            toggleModal={toggleModal}
+            setNewDate={setNewDate}
+            handleTimeExit={handleTimeExit}
+            handleCancel={handleCancel}
+          />
         )}
       </td>
     </tr>
