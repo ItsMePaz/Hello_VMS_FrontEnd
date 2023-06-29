@@ -1,34 +1,60 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5656/api/persons";
-
-let token = null;
+const apiClient = axios.create({
+  baseURL: "http://localhost:5656/api",
+  headers: {
+    common: {
+      "Content-Type": "multipart/form-data",
+    },
+  },
+});
 
 function setToken(newToken) {
-  token = `Bearer ${newToken}`;
+  apiClient.defaults.headers.common["Authorization"] = `Bearer ${newToken}`;
 }
 
+// async function getVisitors() {
+//   /* return fetch(baseURL)
+//     .then((res) => res.json())
+//     .then((data) => data); */
+//   return axios.get(baseURL).then((res) => res.data);
+// }
 async function getVisitors() {
-  /* return fetch(baseURL)
-    .then((res) => res.json())
-    .then((data) => data); */
-  return axios.get(baseURL).then((res) => res.data);
+  const response = await apiClient.get("/persons");
+  return response.data;
 }
 
+// async function createVisitor(visitor) {
+//   const token = `Bearer ${visitor.userToken}`;
+//   const config = {
+//     headers: { Authorization: token },
+//   }
+//   console.log(token);
+//   return axios.post(baseURL, visitor, config).then((res) => res.data);
+// }
 async function createVisitor(visitor) {
-  const token = `Bearer ${visitor.userToken}`;
-  const config = {
-    headers: { Authorization: token },
-  };
-
-  console.log(token);
-  return axios.post(baseURL, visitor, config).then((res) => res.data);
+  const response = await apiClient.post("/visitors", visitor);
+  return response.data;
 }
 
+// async function exitVisitor(visitorId) {
+//   const token = `Bearer ${visitorId.userToken}`;
+//   const config = {
+//     headers: { Authorization: token },
+//   };
+
+//   console.log(token);
+//   return axios.put(exitURL, visitorId, config).then((res) => res.data);
+// }
+async function exitVisitor(visitorId) {
+  const response = await apiClient.put(`/persons/${visitorId}`);
+  return response.data;
+}
 export default {
   getVisitors,
   createVisitor,
   setToken,
+  exitVisitor,
   /* updatePerson,
   deletePerson, */
 };
