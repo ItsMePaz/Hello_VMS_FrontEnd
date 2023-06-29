@@ -33,7 +33,7 @@ async function getVisitors() {
 //   return axios.post(baseURL, visitor, config).then((res) => res.data);
 // }
 async function createVisitor(visitor) {
-  const response = await apiClient.post("/visitors", visitor);
+  const response = await apiClient.post("/persons", visitor);
   return response.data;
 }
 

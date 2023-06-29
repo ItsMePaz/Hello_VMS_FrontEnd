@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UnitListVisitor from "./UnitListVisitor";
 import { useEffect } from "react";
 import visitorService from "../services/visitorService";
+import "../styles/monitoringPage.css";
 
 function VisitorMonitoringTable({ visitorList, setVisitorList }) {
   const [timeExited, setTimeExited] = useState("");
@@ -18,9 +19,9 @@ function VisitorMonitoringTable({ visitorList, setVisitorList }) {
   }, []);
 
   return (
-    <div>
-      <table className="table-headings-placement">
-        <thead>
+    <div className="reverse-monitoring">
+      <table className="table-headings-placement ">
+        <thead className="thead-monitoring">
           <tr>
             <td>VISITOR'S NAME</td>
 
@@ -32,7 +33,7 @@ function VisitorMonitoringTable({ visitorList, setVisitorList }) {
           </tr>
         </thead>
       </table>{" "}
-      <div className="table-body-placement tw-overflow-auto">
+      <div className="table-body-placement tw-overflow-auto tw-h-[250px]">
         <table>
           <tbody>
             {visitorList.map((aVisitor) => (
