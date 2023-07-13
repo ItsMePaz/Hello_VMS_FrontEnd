@@ -42,7 +42,7 @@ async function deleteUser(id) {
   const config = {
     headers: { Authorization: token },
   };
-  const deleteURL = `http://localhost:5656/api/users/${id.id}`;
+  const deleteURL = `/api/users/${id.id}`;
 
   console.log(id.id);
   return axios.delete(deleteURL, id, config).then((res) => res.data);
