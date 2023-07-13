@@ -204,6 +204,38 @@
   .greeting {
     padding-top: 2rem;
   }
+
+  .menu-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5em;
+    margin-left: 50em;
+  }
+
+  .visitor-database {
+    margin-top: 0em;
+    margin-right: 4em;
+    margin-left: 1em;
+  }
+
+  .visitor-database {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    background-color: #59e0f2;
+    width: 288px;
+    height: 230px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+    transition: transform 0.2s;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.508),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 }
 
 /* Mobile */

@@ -134,7 +134,7 @@
 }
 
 /* TABLET */
-@media only screen and (min-width: 709px) and (max-width: 1124px) {
+@media screen and (min-width: 709px) and (max-width: 1124px) {
   .menu-body {
     min-width: 100vw;
     overflow-y: hidden;
@@ -151,10 +151,35 @@
     margin-left: 110vh;
   }
 
+  .menu-options-landingpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5em;
+  }
+
   .visitor-database {
     margin-top: 10em;
-    margin-right: -10em;
+    margin-right: 2em;
     margin-left: 1em;
+  }
+
+  .visitor-database-landingpage {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    background-color: #59e0f2;
+    width: 288px;
+    height: 230px;
+    border-radius: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 35px;
+    color: black;
+    transition: transform 0.2s;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.508),
+      0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .analytics {
     margin-top: -16.8em;
