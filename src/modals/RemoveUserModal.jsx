@@ -1,5 +1,5 @@
 import React from "react";
-import "../app.css";
+import "../App.css";
 import "../styles/userManagementResp.css";
 import registerUserService from "../services/registerUserService";
 import { useState } from "react";

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5656/api/users";
+const baseURL = "/api/users";
 
 let token = null;
 
@@ -31,7 +31,7 @@ async function updateUser(newUser) {
     headers: { Authorization: token },
   };
 
-  const updateURL = `http://localhost:5656/api/users/${newUser.id}`; /* change ID */
+  const updateURL = `/api/users/${newUser.id}`; /* change ID */
 
   console.log(newUser.id);
   return axios.put(updateURL, newUser, config).then((res) => res.data);

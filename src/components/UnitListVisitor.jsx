@@ -1,6 +1,5 @@
 import React from "react";
 import visitorService from "../services/visitorService";
-import "../styles/monitoringPage.css";
 
 function UnitListVisitor({
   visitorId,
@@ -48,7 +47,7 @@ function UnitListVisitor({
           timeExited
         ) : (
           <button
-            className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-middle"
+            className="tw-py-2 tw-px-4 tw-bg-green-500 tw-text-white tw-rounded-lg  tw-hover:bg-green-700 tw-focus:outline-none tw-h-[5vh] tw-text-[9px] tw-mt-[.5vh] tw-align-middle xl:tw-m-[1vh]"
             onClick={handleTimeExit}
           >
             CLICK TO TIME OUT
