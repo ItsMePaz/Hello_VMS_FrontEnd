@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "/api/login/admin";
+const baseUrl = "https://hellovms.onrender.com/api/login/admin";
 
 function login(credentials) {
   return axios.post(baseUrl, credentials).then((res) => res.data);
