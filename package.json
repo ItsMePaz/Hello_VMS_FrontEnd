@@ -35,5 +35,17 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
-  }
+  },
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ItsMePaz/Hello_VMS_FrontEnd.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ItsMePaz/Hello_VMS_FrontEnd/issues"
+  },
+  "homepage": "https://github.com/ItsMePaz/Hello_VMS_FrontEnd#readme",
+  "description": ""
 }
