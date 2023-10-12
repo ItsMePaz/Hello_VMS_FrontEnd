@@ -1,7 +1,11 @@
 import axios from "axios";
 
+const rectUrl = import.meta.env.VITE_URL;
+
 const apiClient = axios.create({
-  baseURL: "http://localhost:5656/api",
+  baseURL:
+    rectUrl +
+    "api" /* "http://localhost:5656/api" || "https://vms.onrender.com/api" */,
   headers: {
     common: {
       "Content-Type": "multipart/form-data",

@@ -1,9 +1,12 @@
 import axios from "axios";
 
-const baseUrl = "https://hellovms.onrender.com/api/login/admin";
+const REACT_URL = import.meta.env.VITE_URL;
+const baseUrl = REACT_URL + "api/login/admin";
 
 function login(credentials) {
   return axios.post(baseUrl, credentials).then((res) => res.data);
 }
 
 export default { login };
+
+/* const baseUrl = "http://localhost:5656/api/login/admin"; */
