@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://hellovms.onrender.com/api",
+  baseURL: "http://localhost:5656/api",
   headers: {
     common: {
       "Content-Type": "multipart/form-data",

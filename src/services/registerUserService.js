@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://hellovms.onrender.com/api/users";
+const baseURL = "http://localhost:5656/api/users";
 
 let token = null;
 
@@ -31,7 +31,7 @@ async function updateUser(newUser) {
     headers: { Authorization: token },
   };
 
-  const updateURL = `https://hellovms.onrender.com/api/users/${newUser.id}`; /* change ID */
+  const updateURL = `http://localhost:5656/api/users/${newUser.id}`; /* change ID */
 
   console.log(newUser.id);
   return axios.put(updateURL, newUser, config).then((res) => res.data);
@@ -42,7 +42,7 @@ async function deleteUser(id) {
   const config = {
     headers: { Authorization: token },
   };
-  const deleteURL = `https://hellovms.onrender.com/api/users/${id.id}`;
+  const deleteURL = `http://localhost:5656/api/users/${id.id}`;
 
   console.log(id.id);
   return axios.delete(deleteURL, id, config).then((res) => res.data);
