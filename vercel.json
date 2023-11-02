@@ -11,6 +11,10 @@
     {
       "src": "/menu",
       "dest": "/"
+    },
+    {
+      "src": "/menu/visitor_database",
+      "dest": "/"
     }
   ]
 }
