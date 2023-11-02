@@ -3,6 +3,10 @@
     {
       "src": "/",
       "dest": "/"
+    },
+    {
+      "src": "/user_management",
+      "dest": "/"
     }
   ]
 }
