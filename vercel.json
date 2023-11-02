@@ -15,6 +15,14 @@
     {
       "src": "/menu/visitor_database",
       "dest": "/"
+    },
+    {
+      "src": "/menu/monitoring",
+      "dest": "/"
+    },
+    {
+      "src": "/menu/analytics",
+      "dest": "/"
     }
   ]
 }
